@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+{% load static %}
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+ 
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+* {
+    letter-spacing: 0;
+}  
+body {
+        overscroll-behavior: none;
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+.nova-logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0; 
+}
+
+.nova-logo-img {
+    width: 210px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .nova-logo-img {
+        width: 210px; 
+    }
+}
+
+.font-en {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.font-ar {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+} 
+body {
+    font-weight: 400;
+}
+
+h1, h2 {
+    font-weight: 500;
+}
+
+h3, h4 {
+    font-weight: 500;
+}
+  </style>
+
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+ <header class="fixed top-0 w-full z-50">
+
+  <div class="bg-primary text-on-primary px-space-md py-space-2xs text-center font-label-sm text-label-sm flex items-center justify-center gap-space-xs shadow-[0_1px_4px_rgba(82,26,122,0.15)]">
+    <span >صُنع بكل فخر في ليبيا |made with pride in Libya</span>
+  </div>
+
+  <div class="bg-surface/85 backdrop-blur-xl shadow-[0_4px_24px_-4px_rgba(107,53,147,0.08)]">
+    <div class="h-20 max-w-container-max mx-auto px-gutter-desktop flex items-center justify-between gap-space-lg">
+
+      <a href="/" class="nova-logo shrink-0">
+        <img src="{% static 'logo.png' %}" 
+             alt= "Nova Logo"
+             class="nova-logo-img">
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-lowest/60 p-space-2xs rounded-full shadow-[0_2px_12px_-2px_rgba(107,53,147,0.05)]">
+        <a aria-current="page" class="px-space-md py-space-xs rounded-full transition-all bg-surface-container text-primary font-bold shadow-sm" href="#">الرئيسية</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="#">منتجاتنا</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="#">قصتنا</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="#">الجودة والتصنيع</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="#">لماذا تختارنا</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="#">كن شريكاً</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="#">تواصل معنا</a>
+      </nav>
+
+      <button id="mobile-menu-btn"
+              class="xl:hidden w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all"
+              aria-label="فتح القائمة">
+        <span class="material-symbols-outlined" id="menu-icon">menu</span>
+      </button>
+
+    </div>
+  </div>
+
+  <div id="mobile-menu"
+       class="xl:hidden hidden absolute top-full left-0 w-full bg-surface/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(107,53,147,0.12)] border-t border-outline-variant/20">
+    <nav class="max-w-container-max mx-auto px-gutter-desktop py-space-lg flex flex-col gap-space-2xs">
+
+      <a href="#" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container text-primary font-bold">
+        الرئيسية
+      </a>
+      <a href="#" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        منتجاتنا
+      </a>
+      <a href="#" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        قصتنا
+      </a>
+      <a href="#" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        الجودة والتصنيع
+      </a>
+      <a href="#" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        لماذا تختارنا
+      </a>
+      <a href="#" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        كن شريكاً
+      </a>
+      <a href="#" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        تواصل معنا
+      </a>
+
+    </nav>
+  </div>
+
+</header>
+  <main class="w-full pt-20 bg-background min-h-screen">
+    <div class="flex flex-col w-full">
+      <section class="relative w-full overflow-hidden bg-gradient-to-b from-surface-container-low via-surface to-background pt-space-3xl pb-space-4xl">
+        <div class="absolute -top-24 right-10 w-96 h-96 rounded-full bg-primary-fixed/40 blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 left-0 w-80 h-80 rounded-full bg-secondary-fixed/40 blur-3xl pointer-events-none"></div>
+        <div class="max-w-container-max mx-auto px-gutter-desktop relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+            <div class="lg:col-span-6 flex flex-col gap-space-lg text-right">
+              <div class="flex flex-wrap items-center gap-space-xs">
+                <span class="inline-flex items-center gap-space-2xs bg-primary text-on-primary font-label-md text-label-md px-space-md py-space-2xs rounded-full shadow-sm">
+                  <span class="material-symbols-outlined text-base">verified</span>
+                  صنع في ليبيا | Made in Libya
+                </span>
+                
+              </div>
+              <div class="flex flex-col gap-space-xs">
+                <h1 class="font-display-hero text-display-hero text-primary font-bold tracking-tight leading-tight">
+                  عناية فائقة ونعومة تدوم
+                  <span class="block text-secondary">لأحبائِك الصغار</span>
+                </h1>
+                <p class="font-label-lg text-label-lg text-on-surface-variant font-medium">
+                  Pure Gentleness, Certified Safety &amp; Loving Care for Every Baby
+                </p>
+              </div>
+              <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-xl">
+                الشركة الليبية الرائدة في تصنيع وتوزيع حفاضات الأطفال والمناديل المبللة الفاخرة، صُممت بأرقى المعايير الطبية الدولية لتمنح بشرة طفلِكِ أماناً متكاملاً وراحة تدوم طوال الليل والنهار.
+              </p>
+              <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+                <a class="inline-flex items-center gap-space-xs bg-primary-container text-on-primary font-label-lg text-label-lg px-space-2xl py-space-md rounded-full shadow-[0_10px_24px_rgba(107,53,147,0.28)] hover:bg-primary transition-all duration-300 transform hover:-translate-y-0.5" href="#products-showcase">
+                  <span>اكتشفي مجموعة منتجاتنا</span>
+                  <span class="material-symbols-outlined text-xl">arrow_back</span>
+                </a>
+                <a class="inline-flex items-center gap-space-xs bg-surface-container-lowest text-primary font-label-lg text-label-lg px-space-xl py-space-md rounded-full shadow-[0_4px_16px_rgba(107,53,147,0.08)] hover:bg-surface-container transition-all" href="#b2b-partnership">
+                  <span class="material-symbols-outlined text-secondary">storefront</span>
+                  <span>كن شريكاً تجارياً وموزعاً</span>
+                </a>
+              </div>
+              <div class="pt-space-md flex items-center gap-space-lg text-on-surface-variant">
+                <div class="flex items-center gap-space-xs">
+                  <div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+                    <span class="material-symbols-outlined text-sm">water_drop</span>
+                  </div>
+                  <span class="font-label-md text-label-md">مستخلصات مهدئة</span>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+                    <span class="material-symbols-outlined text-sm">clock_loader_40</span>
+                  </div>
+                  <span class="font-label-md text-label-md">ملمس قطني مخملي</span>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+                    <span class="material-symbols-outlined text-sm">shield</span>
+                  </div>
+                  <span class="font-label-md text-label-md">حماية ضد التسرب 100%</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-6 relative flex items-center justify-center">
+              <div class="relative w-full max-w-lg aspect-[4/3] flex items-center justify-center">
+                <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-primary-fixed/30 via-secondary-fixed/20 to-surface-container-low blur-xl transform scale-95"></div>
+                <div class="absolute -right-2 top-4 w-52 sm:w-64 z-20 transition-transform duration-500 hover:scale-105 hover:z-40">
+                  <div class="bg-surface-container-lowest p-space-xs rounded-xl shadow-[0_20px_40px_-10px_rgba(82,26,122,0.22)]">
+                    <img alt="حفاضات نوڤا للأطفال مقاس 5 - 38 قطعة" class="w-full h-auto rounded-lg object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABxxK9RXtY2FVRTr1uDL6Aeiwpw68CAmEK-N8G88PWMyRq3qYnLzDWBFFlJUrcPefsPD88UMszpxLTTKEq9nKOPLJQKMaxmCfFGsnlKwbLSLMSZi8h-sUf0gERYNCad_wvSoBj8ufaOJQxlVJptwc-TQo5oOC2dCaeG6nX03kwaDRxuwPb7LW2Jww1GrmtNWMOIjUI9OiTAwZcN0yTqrZa6Q1tEZV8tm2RWJ_Eqa_Jofk66r48rC0BwgJZh1o-uR2t8hw" />
+                    <div class="mt-space-2xs px-space-xs pb-space-2xs flex items-center justify-between">
+                      <span class="font-label-sm text-label-sm bg-primary text-on-primary px-space-xs py-0.5 rounded-full">مقاس 5 • كغ 11-16</span>
+                      <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">38 قطعة</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute -left-4 bottom-2 w-60 sm:w-72 z-30 transition-transform duration-500 hover:scale-105 hover:z-40">
+                  <div class="bg-surface-container-lowest p-space-xs rounded-xl shadow-[0_24px_48px_-12px_rgba(0,100,147,0.25)]">
+                    <img alt="مناديل نوڤا المبللة للأطفال - 72 قطعة" class="w-full h-auto rounded-lg object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRv5oz0QzeKmCBwKZUHcVahLb4wN9j0JUWb7ONj0-9JeRRHobTY0-J3gCfz1tOMIbrQbVxcIxdKYyL_ICszB5dCK1ZD2NkfTCpJpGsM9lwXv8zL8NFMzXjff5bKieLwXoD6mWMRdxyjg_6H15Jmnops-POUEtp7oklnUx-rZhKjgTQl1BY48bOzirxQCxZd0Z9mTKYmOFSno045U1G08QkS4cpc4bmhH6veI84URzvsUPegtp1m7ofkLok5xoMovrBLV4" />
+                    <div class="mt-space-2xs px-space-xs pb-space-2xs flex items-center justify-between">
+                      <span class="font-label-sm text-label-sm bg-secondary text-on-secondary px-space-xs py-0.5 rounded-full">الأزرق الحساس</span>
+                      <span class="font-label-sm text-label-sm text-secondary font-bold">72 Piece Wipes</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute -top-6 left-12 w-44 sm:w-52 z-10 opacity-95 transition-transform duration-500 hover:scale-105 hover:z-40">
+                  <div class="bg-surface-container-lowest p-space-2xs rounded-xl shadow-[0_16px_32px_-8px_rgba(107,53,147,0.18)]">
+                    <img alt="مناديل نوڤا للوجه والمكياج 72 قطعة" class="w-full h-auto rounded-lg object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe0L03NYvZZaTVCbgqkD53s1pcDfQes7VeR-PXFGCHrbuOc6yBfEwyrk2MPkiEfuUqZKOgMWqTBRImNzQGAbGtiFBXq_d5Qk6SA_IhLd4nbMKaQiNgtri26pIoGFX1TwZddFV-3G6kZyYrSvX4Few2d5k5BWzLzUMEvhyUqkgeOchDTjI0yUG9B1FY6BZZiWkYvqeMFjdrHyAbqzRkT2V4XRWET81D3yO1pqHeIxIf4XQbr9sZA88Yi9udXP_hwKcDYOY" />
+                  </div>
+                </div>
+                <div class="absolute -bottom-6 right-16 z-40 bg-surface-container-lowest/95 backdrop-blur-md px-space-md py-space-xs rounded-full shadow-[0_8px_24px_rgba(107,53,147,0.16)] flex items-center gap-space-xs">
+                  <div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center">
+                    <span class="material-symbols-outlined text-on-secondary text-sm">lock</span>
+                  </div>
+                  <span class="font-label-sm text-label-sm text-primary font-bold">غطاء محكم الإغلاق OPEN يحافظ على الرطوبة</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full bg-surface-container-lowest py-space-xl shadow-[0_4px_20px_-4px_rgba(107,53,147,0.06)]">
+        <div class="max-w-container-max mx-auto px-gutter-desktop">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-space-lg">
+            <div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-low/70">
+              <div class="w-14 h-14 shrink-0 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl">layers</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-headline-sm text-headline-sm text-primary font-bold">72 Piece</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">عبوات اقتصادية وعائلية تدوم طويلاً</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-low/70">
+              <div class="w-14 h-14 shrink-0 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined text-2xl">cloud_done</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-headline-sm text-headline-sm text-secondary font-bold">100% قطن</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">فائق النعومة ومضاد للتحسس</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-low/70">
+              <div class="w-14 h-14 shrink-0 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl">precision_manufacturing</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-headline-sm text-headline-sm text-on-surface font-bold">معايير دولية</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">خطوط إنتاج أوتوماتيكية معقمة</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-low/70">
+              <div class="w-14 h-14 shrink-0 rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl">local_shipping</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-headline-sm text-headline-sm text-on-surface font-bold">تغطية شاملة</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">في كبرى الصيدليات والأسواق الليبية</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full py-space-4xl bg-surface" id="products-showcase">
+        <div class="max-w-container-max mx-auto px-gutter-desktop">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-3xl">
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-md text-label-md text-secondary font-bold tracking-widest uppercase">تشكيلة نوڤا المعتمدة • NOVA LINEUP</span>
+              <h2 class="font-headline-lg text-headline-lg text-primary font-bold">مجموعات المنتجات الأصلية عالية الجودة</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">مصممة خصيصاً لتلبي احتياجات الأمهات، الرضع، والعناية الشخصية اليومية بكل أمان.</p>
+            </div>
+            <div class="inline-flex p-space-2xs bg-surface-container-high rounded-full font-label-md text-label-md">
+              <button class="px-space-md py-space-xs rounded-full bg-primary text-on-primary shadow-sm font-semibold">الكل</button>
+              <button class="px-space-md py-space-xs rounded-full text-on-surface-variant hover:text-primary transition-colors">حفاضات الأطفال</button>
+              <button class="px-space-md py-space-xs rounded-full text-on-surface-variant hover:text-primary transition-colors">مناديل الرضع</button>
+              <button class="px-space-md py-space-xs rounded-full text-on-surface-variant hover:text-primary transition-colors">عناية بالمرأة والوجه</button>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+            <div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(107,53,147,0.14)] transition-all duration-300 group overflow-hidden">
+              <div class="relative bg-gradient-to-b from-surface-container-low to-surface-container-lowest p-space-lg flex items-center justify-center min-h-[260px]">
+                <div class="absolute top-3 right-3 bg-primary text-on-primary font-label-sm text-label-sm px-space-sm py-1 rounded-full shadow-sm">
+                  38 Piece • مقاس 5
+                </div>
+                <div class="absolute top-3 left-3 bg-surface-container text-secondary font-label-sm text-label-sm px-space-xs py-1 rounded-full flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs">verified</span>
+                  صنع في ليبيا
+                </div>
+                <img alt="Nova Baby Diapers Size 5" class="h-56 object-contain transform group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4JnEcwtZdglmhT-f54B5835zNyFy0_FmUmBQ-uiVVyBsU2_MjfeA3ZbC7VeOx25PxPvDn7Gb6WDL3mHa4sy1MMGRHIsnXgNeEusi918jrAA8jT1nFHJLIHwN_ljwQT5gSFH11R2bIq0nISwZFXd7JSFnWjqW28_Y5vl5nqYib5x1Fg8nbu5-tJERau9Invki8FCZz3Yyf8qfyceZfUiRU5jU_1hI09Y3y7jIcZEYXCUuS_Mk4LpvfejPus-Tq1yO4uM" />
+              </div>
+              <div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+                <div class="flex flex-col gap-space-xs">
+                  <div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm font-semibold">
+                    <span class="material-symbols-outlined text-base">baby_changing_station</span>
+                    <span>حفاضات الأطفال • 11 - 16 كجم</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">حفاضات نوڤا فائقة الامتصاص</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    الراحة والأمان لطفلك مع تقنية التوزيع ثلاثي الأبعاد، حزام خصر مرن، وحواجز جانبية مانعة للتسرب على مدار 12 ساعة.
+                  </p>
+                </div>
+                <div class="flex flex-col gap-space-sm">
+                  <div class="flex flex-wrap gap-space-2xs">
+                    <span class="bg-surface-container-low text-primary text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">قطن طبيعي</span>
+                    <span class="bg-surface-container-low text-primary text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">مؤشر بلل</span>
+                    <span class="bg-surface-container-low text-primary text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">تنفس متكامل</span>
+                  </div>
+                  <button class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container text-primary font-label-md text-label-md py-space-sm rounded-full hover:bg-primary hover:text-on-primary transition-all" onclick="document.getElementById('product-modal-1').classList.toggle('hidden')">
+                    <span>المواصفات والطلب التجاري</span>
+                    <span class="material-symbols-outlined text-sm">visibility</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(107,53,147,0.14)] transition-all duration-300 group overflow-hidden">
+              <div class="relative bg-gradient-to-b from-secondary-fixed/30 to-surface-container-lowest p-space-lg flex items-center justify-center min-h-[260px]">
+                <div class="absolute top-3 right-3 bg-secondary text-on-secondary font-label-sm text-label-sm px-space-sm py-1 rounded-full shadow-sm">
+                  72 Piece • وايبس
+                </div>
+                <div class="absolute top-3 left-3 bg-surface-container text-secondary font-label-sm text-label-sm px-space-xs py-1 rounded-full flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs">favorite</span>
+                  حديثي الولادة
+                </div>
+                <img alt="Nova Sensitive Baby Wipes 72 Wipes" class="h-56 object-contain transform group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtnzsVt_GX7nfAuET2v5vZkp1K1gLRtgdr5_JcP5C6KV-ejzaDdD3vq5FdbQSetKve84aJk8XNeLrgQz7KPcqoBJFOHUVUyhPQmUgRuNL4uJ-6Dx_mCl3DOOaOCEA0qaYBnDdzudBXUHOVr4kfn57LqxA8QurRk-iJgnMNugzIBpmTDgw2R5KFemkMVQ7umUIaX7yyXtYk62aHTvVzsqyNnVvw8jpgvrSkaD-MvwGtn3W9F5u6r8S8cQKVg3m7VqpmptU" />
+              </div>
+              <div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+                <div class="flex flex-col gap-space-xs">
+                  <div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm font-semibold">
+                    <span class="material-symbols-outlined text-base">child_care</span>
+                    <span>الراحة والأمان للأطفال • حتى 5 كجم</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">مناديل نوڤا للأطفال للبشرة الحساسة</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    وايبس ناعم خاص بالبشرة فائقة الحساسية للرضع، خالية تماماً من الكحول وموزونة الحموضة pH لحماية يومية موثوقة.
+                  </p>
+                </div>
+                <div class="flex flex-col gap-space-sm">
+                  <div class="flex flex-wrap gap-space-2xs">
+                    <span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">0% كحول</span>
+                    <span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">مستخلصات طبيعية</span>
+                    <span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">مختبر جلدياً</span>
+                  </div>
+                  <button class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container text-primary font-label-md text-label-md py-space-sm rounded-full hover:bg-secondary hover:text-on-secondary transition-all" onclick="document.getElementById('product-modal-2').classList.toggle('hidden')">
+                    <span>المواصفات والطلب التجاري</span>
+                    <span class="material-symbols-outlined text-sm">visibility</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(107,53,147,0.14)] transition-all duration-300 group overflow-hidden">
+              <div class="relative bg-gradient-to-b from-primary-fixed/30 to-surface-container-lowest p-space-lg flex items-center justify-center min-h-[260px]">
+                <div class="absolute top-3 right-3 bg-primary text-on-primary font-label-sm text-label-sm px-space-sm py-1 rounded-full shadow-sm">
+                  72 Piece • وايبس
+                </div>
+                <div class="absolute top-3 left-3 bg-surface-container text-primary font-label-sm text-label-sm px-space-xs py-1 rounded-full flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs">face_retouching_natural</span>
+                  مزيل للمكياج
+                </div>
+                <img alt="Nova Facial and Makeup Removal Wipes 72 Wipes" class="h-56 object-contain transform group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcnYPd755eUkiwq0nwwf5ner18_oBZPPP4qL2kqGFwWXJnZEp1HJlHnRPR7xKgQuaffWJM_HVoN0plq9F11_I2VFbGeRu8IMIiIMyg7TJQ45Kz-6X9tUMggTwZEw3cXo8znkiKkt2xqv_4ijaw_0e9PgAIClODZRsuiRhACc94bMkVlYsWqJiIZbM5a20Grrurr77ovnE-RZSo9CxbOsa7CL8a5H3PNA6o5F1Lyu598GlmWtRPYpCfcEYnHLs_viuPJkQ" />
+              </div>
+              <div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+                <div class="flex flex-col gap-space-xs">
+                  <div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm font-semibold">
+                    <span class="material-symbols-outlined text-base">spa</span>
+                    <span>الراحة والأمان للوجه • Removed &amp; Refreshed</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">مناديل نوڤا للوجه وإزالة المكياج</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    وايبس ناعم مخملي للبشرة الحساسة، خاص لليدين والوجه ومزيل فوري للمكياج المقاوم للماء مع تجديد النضارة والحيوية.
+                  </p>
+                </div>
+                <div class="flex flex-col gap-space-sm">
+                  <div class="flex flex-wrap gap-space-2xs">
+                    <span class="bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">ماء ميسيلار نقي</span>
+                    <span class="bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">غطاء كبس محكم</span>
+                    <span class="bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">نعومة فائقة</span>
+                  </div>
+                  <button class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container text-primary font-label-md text-label-md py-space-sm rounded-full hover:bg-primary-container hover:text-on-primary transition-all" onclick="document.getElementById('product-modal-3').classList.toggle('hidden')">
+                    <span>المواصفات والطلب التجاري</span>
+                    <span class="material-symbols-outlined text-sm">visibility</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(107,53,147,0.14)] transition-all duration-300 group overflow-hidden">
+              <div class="relative bg-gradient-to-b from-surface-variant/40 to-surface-container-lowest p-space-lg flex items-center justify-center min-h-[260px]">
+                <div class="absolute top-3 right-3 bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-space-sm py-1 rounded-full shadow-sm">
+                  72 Piece • وايبس
+                </div>
+                <div class="absolute top-3 left-3 bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-space-xs py-1 rounded-full flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs">pan_tool</span>
+                  خاص لليدين
+                </div>
+                <img alt="Nova Soft Hand &amp; Daily Care Wipes 72 Wipes" class="h-56 object-contain transform group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsobHRgPTIxVLKMbWVhCblTSzYR2Fs_xm9MI0wh44DiwQiGfPRlNKMWYPcbRntoUD2FSlMIBcyTGoJ_HFS5bTD245HFjo_yrOfgSbvYLRnh7LH5VYnUA5-w8r6Scv9-Q5FtqkT7nPIVaaHjhqNct0yZfcIK3RV6cEGTjC-aaLDkp-ta1qXzfgwe19jtXMHoTnymISeA0lLGixTRzDN__x2JBaky9fLx1Aucx6O8BpKyDGUCjBQvzZ3NT-lykgYAA3d9ak" />
+              </div>
+              <div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+                <div class="flex flex-col gap-space-xs">
+                  <div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm font-semibold">
+                    <span class="material-symbols-outlined text-base">clean_hands</span>
+                    <span>الراحة والأمان لليدين • نقاء القطن</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">مناديل نوڤا النقية لليدين والعناية اليومية</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    وايبس ناعم بالقطن الطبيعي واللمسة المخملية، مثالي للسيارة، المكتب، ونظافة العائلة الفورية خارج المنزل وداخله.
+                  </p>
+                </div>
+                <div class="flex flex-col gap-space-sm">
+                  <div class="flex flex-wrap gap-space-2xs">
+                    <span class="bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">قطن نقي 100%</span>
+                    <span class="bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">آمنة على البشرة</span>
+                    <span class="bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm px-space-xs py-0.5 rounded-full">انتعاش دائم</span>
+                  </div>
+                  <button class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container text-primary font-label-md text-label-md py-space-sm rounded-full hover:bg-tertiary hover:text-on-tertiary transition-all" onclick="document.getElementById('product-modal-4').classList.toggle('hidden')">
+                    <span>المواصفات والطلب التجاري</span>
+                    <span class="material-symbols-outlined text-sm">visibility</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="hidden fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-4" id="product-modal-1">
+        <div class="bg-surface-container-lowest max-w-lg w-full rounded-xl p-space-xl shadow-2xl flex flex-col gap-space-md text-right">
+          <div class="flex items-center justify-between">
+            <h4 class="font-headline-sm text-headline-sm text-primary">مواصفات حفاضات نوڤا - Nova Diapers</h4>
+            <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary-fixed" onclick="document.getElementById('product-modal-1').classList.add('hidden')">✕</button>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant">العبوة العائلية: 38 حفاضة مقاس 5 (للأطفال من وزن 11 إلى 16 كغ). مصنوعة بأحدث خطوط الإنتاج الليبية مع مادة SAP الأوروبية فائقة الامتصاص لضمان جفاف تام ومقاومة تسرب طوال الليل.</p>
+          <div class="flex items-center justify-end gap-space-sm pt-space-xs">
+            <a class="bg-primary text-on-primary font-label-md text-label-md px-space-lg py-space-xs rounded-full" href="#b2b-partnership" onclick="document.getElementById('product-modal-1').classList.add('hidden')">طلب تسعير جملة</a>
+          </div>
+        </div>
+      </div>
+      <div class="hidden fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-4" id="product-modal-2">
+        <div class="bg-surface-container-lowest max-w-lg w-full rounded-xl p-space-xl shadow-2xl flex flex-col gap-space-md text-right">
+          <div class="flex items-center justify-between">
+            <h4 class="font-headline-sm text-headline-sm text-secondary">مناديل نوڤا للأطفال 72 قطعة</h4>
+            <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-secondary-fixed" onclick="document.getElementById('product-modal-2').classList.add('hidden')">✕</button>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant">مزودة بغطاء بلاستيكي صلب بتقنية القفل الذاتي OPEN للحفاظ على الرطوبة ومنع التلوث. تركيبة خالية تماماً من العطور الصناعية القاسية، البارابين، والروائح المسببة للتحسس عند حديثي الولادة.</p>
+          <div class="flex items-center justify-end gap-space-sm pt-space-xs">
+            <a class="bg-secondary text-on-secondary font-label-md text-label-md px-space-lg py-space-xs rounded-full" href="#b2b-partnership" onclick="document.getElementById('product-modal-2').classList.add('hidden')">طلب عينات توريد</a>
+          </div>
+        </div>
+      </div>
+      <div class="hidden fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-4" id="product-modal-3">
+        <div class="bg-surface-container-lowest max-w-lg w-full rounded-xl p-space-xl shadow-2xl flex flex-col gap-space-md text-right">
+          <div class="flex items-center justify-between">
+            <h4 class="font-headline-sm text-headline-sm text-primary">مناديل إزالة المكياج والوجه Nova</h4>
+            <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface" onclick="document.getElementById('product-modal-3').classList.add('hidden')">✕</button>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant">تزيل أعتى أنواع المكياج المقاوم للماء بلمسة واحدة دون الحاجة للفرك المؤذي لخلايا البشرة. مدعمة بمستخلصات نباتية ملطفة تمنح الوجه إحساس الانتعاش والراحة الكاملة.</p>
+          <div class="flex items-center justify-end gap-space-sm pt-space-xs">
+            <a class="bg-primary text-on-primary font-label-md text-label-md px-space-lg py-space-xs rounded-full" href="#b2b-partnership" onclick="document.getElementById('product-modal-3').classList.add('hidden')">حجز وكالة صيدليات</a>
+          </div>
+        </div>
+      </div>
+      <div class="hidden fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-4" id="product-modal-4">
+        <div class="bg-surface-container-lowest max-w-lg w-full rounded-xl p-space-xl shadow-2xl flex flex-col gap-space-md text-right">
+          <div class="flex items-center justify-between">
+            <h4 class="font-headline-sm text-headline-sm text-tertiary">مناديل نوڤا النقية لليدين</h4>
+            <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface" onclick="document.getElementById('product-modal-4').classList.add('hidden')">✕</button>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant">الخيار المثالي للعائلة في الرحلات والتنقلات. نسيج ناعم ومتين ينظف الأوساخ برقة ودون ترك أي أثر لزج على اليدين، معتمدة ومطابقة للمواصفات القياسية الوطنية الليبية.</p>
+          <div class="flex items-center justify-end gap-space-sm pt-space-xs">
+            <a class="bg-tertiary text-on-tertiary font-label-md text-label-md px-space-lg py-space-xs rounded-full" href="#b2b-partnership" onclick="document.getElementById('product-modal-4').classList.add('hidden')">استفسار مبيعات</a>
+          </div>
+        </div>
+      </div>
+      <section class="w-full py-space-4xl bg-surface-container-low relative">
+        <div class="max-w-container-max mx-auto px-gutter-desktop">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+            <div class="lg:col-span-7 flex flex-col gap-space-lg text-right">
+              <div class="flex flex-col gap-space-xs">
+                <span class="font-label-md text-label-md text-secondary font-bold tracking-wider uppercase">معايير التصنيع والسلامة الدوائية • PHARMACEUTICAL GRADE</span>
+                <h2 class="font-headline-lg text-headline-lg text-primary font-bold">لماذا تعتبر منتجات  نوڤا الخيار الأول للأمهات في ليبيا؟</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant">
+                  نحن لا نصنع مجرد حفاضات أو مناديل، بل نبني درع حماية متكاملاً لصحة المواليد والنساء عبر بيئة تصنيع معقمة بنظام الغرف النظيفة (Cleanrooms).
+                </p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+                <div class="p-space-lg rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+                  <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-space-2xs">
+                    <span class="material-symbols-outlined text-xl">biotech</span>
+                  </div>
+                  <h4 class="font-headline-sm text-headline-sm text-on-surface text-lg font-bold">1. المواد الخام النقية</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    استيراد حصري لألياف السليلوز والقطن النقي من كبرى الشركات العالمية المعتمدة طبياً والخالية من المبيضات الكلورية.
+                  </p>
+                </div>
+                <div class="p-space-lg rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+                  <div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary mb-space-2xs">
+                    <span class="material-symbols-outlined text-xl">sanitizer</span>
+                  </div>
+                  <h4 class="font-headline-sm text-headline-sm text-on-surface text-lg font-bold">2. التعقيم والفحص الآلي</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    مراقبة إلكترونية بالكاميرات الحساسة بالأشعة لكل حبة وايبس وحفاضة لضمان خلوها بنسبة 100% من أي شوائب أو عيوب.
+                  </p>
+                </div>
+                <div class="p-space-lg rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+                  <div class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary mb-space-2xs">
+                    <span class="material-symbols-outlined text-xl">shield_lock</span>
+                  </div>
+                  <h4 class="font-headline-sm text-headline-sm text-on-surface text-lg font-bold">3. التعبئة بفتحة محكمة</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    أغطية كبس بلاستيكية مزدوجة مانعة لتسرب الرطوبة وجفاف المناديل حتى آخر منديل في العبوة (72 قطعة).
+                  </p>
+                </div>
+                <div class="p-space-lg rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+                  <div class="w-10 h-10 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-secondary mb-space-2xs">
+                    <span class="material-symbols-outlined text-xl">health_and_safety</span>
+                  </div>
+                  <h4 class="font-headline-sm text-headline-sm text-on-surface text-lg font-bold">4. اختبارات جلدية دورية</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    فحوصات ميكروبيولوجية مستمرة لضمان مطابقة درجة الحموضة الطبيعية للجلد (pH 5.5) وسلامتها لحديثي الولادة.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-5 flex flex-col items-center">
+              <div class="w-full bg-surface-container-lowest rounded-xl p-space-xl shadow-[0_16px_40px_rgba(107,53,147,0.1)] flex flex-col gap-space-lg text-center relative overflow-hidden">
+                <div class="absolute -top-12 -right-12 w-36 h-36 rounded-full bg-primary-fixed/50 blur-2xl"></div>
+                <span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-widest">الهوية البصرية الأصلية المعتمدة</span>
+                <div class="p-space-lg rounded-lg bg-surface-container-low flex items-center justify-center shadow-inner">
+                  <img alt="شعار شركة نوڤا المعتمد" class="max-h-40 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFsBLg-Ig0Q3wROOxaAuhM_hS121C8fPgFslxfSYYADjJQDZpzirVV_r4qOrDxLHfSNWV2p5rBUN4c-eKdTi88S3fu-YxpHGMl8ugM3IIG90V2w85rfNL71MOoA9byry4YulXb_WC2AzTDHXyz-WkcdhWHtWpkEOhAY4rJa3Dt_ViOmXw19DpUli99NlzWGjsi5sl_S0GCmRlz5lXJBfB1SbR4oG-Oy9CYK-qvfGoBQ6SmlXougmP4UDYozOt4zWkdR-Q" />
+                </div>
+                <div class="flex flex-col gap-space-2xs">
+                  <h3 class="font-headline-sm text-headline-sm text-primary font-bold">علامة تجارية وطنية تفخر بها ليبيا</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    رمز الفراشة والريشة في شعار نوڤا يجسد خفة الملمس والنعومة الفائقة والأمان المطلق لبشرة رضيعك منذ اللحظة الأولى.
+                  </p>
+                </div>
+                <div class="pt-space-xs flex items-center justify-center gap-space-sm">
+                  <div class="inline-flex items-center gap-1 bg-surface-container px-space-md py-space-2xs rounded-full font-label-sm text-label-sm text-primary font-bold">
+                    <span class="material-symbols-outlined text-sm">stars</span>
+                    مسجلة ومحمية قانونياً
+                  </div>
+                  <div class="inline-flex items-center gap-1 bg-surface-container px-space-md py-space-2xs rounded-full font-label-sm text-label-sm text-secondary font-bold">
+                    <span class="material-symbols-outlined text-sm">flag</span>
+                    إنتاج ليبي 100%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full py-space-4xl bg-surface">
+        <div class="max-w-container-max mx-auto px-gutter-desktop">
+          <div class="text-center max-w-2xl mx-auto mb-space-3xl flex flex-col gap-space-xs">
+            <span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-widest">القيمة الحقيقية للأسرة الليبية</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary font-bold">مزايا حصرية تجعل نوڤا الخيار الذكي</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              نجمع بين الجودة الأوروبية الممتازة والأسعار العادلة لجميع العائلات مع وفرة مستمرة في كافة مناطق ليبيا.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+            <div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.05)] hover:-translate-y-1 transition-all duration-300 flex flex-col gap-space-md text-right">
+              <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl">favorite</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">راحة تامة لأمهات اليوم</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                تصميمات مريحة لا تسبب علامات احمرار على فخذي الطفل، وتمنح الأم راحة البال طوال ساعات النوم والسفر.
+              </p>
+            </div>
+            <div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.05)] hover:-translate-y-1 transition-all duration-300 flex flex-col gap-space-md text-right">
+              <div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined text-2xl">savings</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">توفير حقيقي واقتصادي</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                عبوات عائلية تحتوي على عدد قطع أكبر (72 منديل / 38 حفاضة) لتقديم أعلى جودة بأفضل سعر منافس للمستورد.
+              </p>
+            </div>
+            <div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.05)] hover:-translate-y-1 transition-all duration-300 flex flex-col gap-space-md text-right">
+              <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl">local_pharmacy</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">توصية أطباء الجلدية</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                معتمدة لدى كبار أطباء الأطفال والصيادلة كبديل آمن ولطيف يخلو من الروائح الكيميائية والمهيجات الجلدية.
+              </p>
+            </div>
+            <div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.05)] hover:-translate-y-1 transition-all duration-300 flex flex-col gap-space-md text-right">
+              <div class="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl">inventory_2</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">إمداد وتوافر دائم</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                كوننا نصنّع محلياً في ليبيا، نضمن استمرارية التوريد دون انقطاع وتحديث الإنتاج وفق احتياجات السوق الفورية.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full py-space-4xl bg-gradient-to-br from-primary via-primary-container to-on-primary-fixed text-on-primary relative overflow-hidden" id="b2b-partnership">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,300 C200,450 400,200 600,350 C800,500 900,300 1000,400 L1000,1000 L0,1000 Z" fill="currentColor"></path>
+          </svg>
+        </div>
+        <div class="max-w-container-max mx-auto px-gutter-desktop relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+            <div class="lg:col-span-6 flex flex-col gap-space-lg text-right">
+              <div class="inline-flex items-center gap-space-xs bg-surface-container-lowest/15 backdrop-blur-md px-space-md py-space-2xs rounded-full self-start text-secondary-container font-label-md text-label-md">
+                <span class="material-symbols-outlined text-base">hub</span>
+                <span>بوابة التوزيع التجاري وشركاء النجاح</span>
+              </div>
+              <h2 class="font-headline-lg text-headline-lg font-bold text-on-primary leading-tight">
+                كن شريكاً تجارياً وموزعاً معتمداً لمنتجات  نوڤا
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-primary-container leading-relaxed">
+                ندعو أصحاب الصيدليات، الموزعين المعتمدين، وسلاسل السوبرماركت في طرابلس، بنغازي، مصراتة، سبها وكافة المدن الليبية للانضمام إلى شبكتنا التجارية الحصرية مع عروض أسعار تفضيلية ومرونة لوجستية كاملة.
+              </p>
+              <div class="flex flex-col gap-space-xs pt-space-xs font-body-sm text-body-sm">
+                <div class="flex items-center gap-space-sm">
+                  <span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs">✓</span>
+                  <span>أسعار جملة تنافسية تضمن هوامش ربحية ممتازة لشركائنا.</span>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs">✓</span>
+                  <span>تسهيلات دفع مرنة وخطط دعم تسويقي وإعلاني داخل نقاط البيع.</span>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs">✓</span>
+                  <span>أسطول نقل وتوصيل سريع ومباشر لمستودعاتكم.</span>
+                </div>
+              </div>
+              <div class="pt-space-md flex flex-wrap items-center gap-space-md">
+                <a class="inline-flex items-center gap-space-xs bg-secondary-container text-on-secondary-container font-label-lg text-label-lg px-space-xl py-space-md rounded-full shadow-lg hover:bg-secondary-fixed transition-all font-bold" href="https://wa.me/218910000000" rel="noopener noreferrer" target="_blank">
+                  <span class="material-symbols-outlined text-xl">chat</span>
+                  <span>تواصل مباشر عبر واتساب المبيعات</span>
+                </a>
+                <div class="text-right">
+                  <span class="block font-label-sm text-label-sm text-primary-fixed-dim">الرقم الموحد للإدارة والمبيعات</span>
+                  <span class="font-headline-sm text-headline-sm font-bold text-on-primary" dir="ltr">+218 (21) 489-0123</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-6">
+              <div class="bg-surface-container-lowest text-on-surface p-space-2xl rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.2)]">
+                <div class="flex flex-col gap-space-2xs mb-space-lg text-right">
+                  <h3 class="font-headline-sm text-headline-sm text-primary font-bold">طلب توريد / فتح حساب موزع</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">املأ النموذج وسيتصل بك مدير المبيعات الإقليمي خلال 24 ساعة عمل.</p>
+                </div>
+                <form class="flex flex-col gap-space-md text-right" onsubmit="event.preventDefault(); alert('شكراً لاهتمامكم نوڤا. سيقوم فريق المبيعات بالتواصل معكم قريباً.');">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div class="flex flex-col gap-space-2xs">
+                      <label class="font-label-sm text-label-sm font-bold text-on-surface">اسم النشاط التجاري / الصيدلية *</label>
+                      <input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary" placeholder="مثال: صيدلية النقاء الحديثة" required="" type="text" />
+                    </div>
+                    <div class="flex flex-col gap-space-2xs">
+                      <label class="font-label-sm text-label-sm font-bold text-on-surface">اسم المسؤول ورقم الهاتف *</label>
+                      <input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary text-right" dir="ltr" placeholder="091XXXXXXX" required="" type="tel" />
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div class="flex flex-col gap-space-2xs">
+                      <label class="font-label-sm text-label-sm font-bold text-on-surface">المدينة / المنطقة *</label>
+                      <select class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary text-on-surface">
+                        <option>طرابلس الكبرى</option>
+                        <option>بنغازي</option>
+                        <option>مصراتة</option>
+                        <option>الزاوية</option>
+                        <option>سبها والجنوب</option>
+                        <option>البيضاء / طبرق</option>
+                        <option>مدينة أخرى</option>
+                      </select>
+                    </div>
+                    <div class="flex flex-col gap-space-2xs">
+                      <label class="font-label-sm text-label-sm font-bold text-on-surface">نوع النشاط</label>
+                      <select class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary text-on-surface">
+                        <option>موزع جملة ومورد رئيسي</option>
+                        <option>صيدلية أو مجمع عيادات</option>
+                        <option>سوبرماركت / هايبرماركت</option>
+                        <option>مستشفى أو مركز رعاية أمومة</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-space-2xs">
+                    <label class="font-label-sm text-label-sm font-bold text-on-surface">المنتجات المرغوبة في الطلبية المبدئية</label>
+                    <div class="grid grid-cols-2 gap-space-xs pt-1">
+                      <label class="flex items-center gap-space-xs font-body-sm text-body-sm cursor-pointer">
+                        <input checked="" class="rounded text-primary" type="checkbox" />
+                        <span>حفاضات Nova Diapers</span>
+                      </label>
+                      <label class="flex items-center gap-space-xs font-body-sm text-body-sm cursor-pointer">
+                        <input checked="" class="rounded text-primary" type="checkbox" />
+                        <span>مناديل الأطفال الحساسة 72 ق</span>
+                      </label>
+                      <label class="flex items-center gap-space-xs font-body-sm text-body-sm cursor-pointer">
+                        <input class="rounded text-primary" type="checkbox" />
+                        <span>مناديل الوجه والمكياج</span>
+                      </label>
+                      <label class="flex items-center gap-space-xs font-body-sm text-body-sm cursor-pointer">
+                        <input class="rounded text-primary" type="checkbox" />
+                        <span>مناديل اليدين والمنزل</span>
+                      </label>
+                    </div>
+                  </div>
+                  <button class="w-full mt-space-xs bg-primary text-on-primary font-label-lg text-label-lg py-space-md rounded-full shadow-[0_8px_20px_rgba(82,26,122,0.3)] hover:bg-primary-container transition-all flex items-center justify-center gap-space-xs" type="submit">
+                    <span>إرسال طلب التوريد التجاري</span>
+                    <span class="material-symbols-outlined text-lg">send</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-lowest pt-space-4xl pb-space-2xl shadow-[0_-4px_24px_-4px_rgba(107,53,147,0.03)]">
+    <div class="max-w-container-max mx-auto px-gutter-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-2xl mb-space-3xl">
+        <div class="lg:col-span-2 flex flex-col gap-space-md">
+          <div class="flex items-center gap-space-xs">
+            <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-on-primary text-xl">child_care</span>
+            </div>
+            <span class="font-headline-sm text-headline-sm text-primary">NOVA • شركة نوڤا</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md leading-relaxed">الشركة الوطنية الرائدة في تصنيع حفاضات الأطفال والمناديل المبللة ومستلزمات العناية الصحية للأمهات والرضع في ليبيا. نبتكر بعناية فائقة وتكنولوجيا أوروبية لضمان راحة وسلامة بشرة طفلك في كل لحظة.</p>
+          <div class="flex items-center gap-space-xs mt-space-xs">
+            <span class="inline-flex items-center gap-space-2xs bg-surface-container-low text-secondary font-label-sm text-label-sm px-space-md py-space-xs rounded-full">
+              <span class="material-symbols-outlined text-sm">eco</span>خالٍ من الكحول والعطور الضارة
+            </span>
+            <span class="inline-flex items-center gap-space-2xs bg-surface-container-low text-primary font-label-sm text-label-sm px-space-md py-space-xs rounded-full">
+              <span class="material-symbols-outlined text-sm">health_and_safety</span>مفحوص جلدياً pH 5.5
+            </span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs text-lg">مجموعات المنتجات</h4>
+          <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+            <li><a class="hover:text-primary transition-colors flex items-center gap-space-2xs" data-path="products" href="#"><span class="material-symbols-outlined text-sm text-secondary-container">check_circle</span>حفاضات الأطفال Nova Diapers</a></li>
+            <li><a class="hover:text-primary transition-colors flex items-center gap-space-2xs" data-path="products" href="#"><span class="material-symbols-outlined text-sm text-secondary-container">check_circle</span>مناديل مبللة مهدئة Nova Wipes</a></li>
+            <li><a class="hover:text-primary transition-colors flex items-center gap-space-2xs" data-path="products" href="#"><span class="material-symbols-outlined text-sm text-secondary-container">check_circle</span>مستلزمات العناية اليومية بالطفل</a></li>
+            <li><a class="hover:text-primary transition-colors flex items-center gap-space-2xs" data-path="products" href="#"><span class="material-symbols-outlined text-sm text-secondary-container">check_circle</span>حفاضات كبار السن والعناية المركزة</a></li>
+            <li><a class="hover:text-primary transition-colors flex items-center gap-space-2xs" data-path="distribution-and-partners" href="#"><span class="material-symbols-outlined text-sm text-secondary-container">check_circle</span>عبوات التوفير العائلية</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs text-lg">روابط سريعة</h4>
+          <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+            <li><a class="hover:text-primary transition-colors" data-path="about-us" href="#">عن مصنع نوڤا</a></li>
+            <li><a class="hover:text-primary transition-colors" data-path="quality-and-manufacturing" href="#">معايير الجودة والسلامة</a></li>
+            <li><a class="hover:text-primary transition-colors" data-path="why-us" href="#">لماذا يختار الأطباء نوڤا؟</a></li>
+            <li><a class="hover:text-primary transition-colors" data-path="distribution-and-partners" href="#">شبكة الموزعين المعتمدين</a></li>
+            <li><a class="hover:text-primary transition-colors" data-path="contact" href="#">فروع الإدارة والمبيعات</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs text-lg">التواصل والمبيعات</h4>
+          <div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+            <div class="flex items-start gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-lg mt-0.5">location_on</span>
+              <span>طرابلس: المنطقة الصناعية تاجوراء<br />بنغازي: طريق المطار الدائري</span>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-lg">call</span>
+              <span dir="ltr">+218 (21) 489-0123</span>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-lg">mail</span>
+              <span>sales@nova-hygiene.ly</span>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-lg">chat</span>
+              <span>خدمة العملاء عبر واتساب: 218910000000+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+        <div class="flex items-center gap-space-xs">
+          <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+          <span>جميع الحقوق محفوظة © 2025 شركة نوڤا لصناعة الحفاضات والمناديل المبللة. صنع بفخر في ليبيا.</span>
+        </div>
+        <div class="flex items-center gap-space-lg">
+          <span>سياسة الخصوصية</span>
+          <span>شروط التوزيع والتوريد</span>
+          <span>شهادات الآيزو والجودة ISO 9001:2015</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        icon.textContent = 'menu';
+      });
+    });
+  </script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-on-surface": "#f5eefe",
+            "on-primary-fixed-variant": "#622c8a",
+            "tertiary-container": "#4f4f53",
+            "surface-container-highest": "#e7e0ef",
+            "surface-container": "#f2ebfb",
+            "surface-bright": "#fdf7ff",
+            "on-secondary-fixed": "#001e30",
+            "primary-fixed": "#f3daff",
+            "surface-tint": "#7c45a4",
+            "tertiary": "#38383c",
+            "secondary-fixed-dim": "#8ccdff",
+            "inverse-surface": "#322f3a",
+            "on-secondary": "#ffffff",
+            "on-surface": "#1d1a25",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#c2c1c5",
+            "secondary": "#006493",
+            "surface-dim": "#ded7e7",
+            "outline": "#7e7481",
+            "on-secondary-container": "#004465",
+            "on-primary-container": "#deaeff",
+            "surface": "#fdf7ff",
+            "on-secondary-fixed-variant": "#004b70",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "background": "#fdf7ff",
+            "on-tertiary-fixed": "#1b1b1f",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#2e004d",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#46464a",
+            "primary-fixed-dim": "#e2b6ff",
+            "primary-container": "#6b3593",
+            "inverse-primary": "#e2b6ff",
+            "on-background": "#1d1a25",
+            "secondary-container": "#36b5fd",
+            "outline-variant": "#cfc3d2",
+            "surface-container-high": "#ede5f5",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e7e0ef",
+            "on-error": "#ffffff",
+            "primary": "#521a7a",
+            "tertiary-fixed": "#e3e2e7",
+            "on-surface-variant": "#4c4450",
+            "tertiary-fixed-dim": "#c7c6cb",
+            "secondary-fixed": "#cae6ff",
+            "surface-container-low": "#f8f1ff"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-2xl": "3rem",
+            "container-max": "1280px",
+            "space-xs": "0.5rem",
+            "space-4xl": "6rem",
+            "space-xl": "2rem",
+            "space-sm": "0.75rem",
+            "space-lg": "1.5rem",
+            "space-2xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter-mobile": "1rem",
+            "gutter-desktop": "2rem",
+            "space-3xl": "4.5rem"
+          },
+                fontFamily: {
+                    "label-md": ["ibmPlexSans"],
+                    "body-lg": ["ibmPlexSans"],
+                    "headline-sm": ["ibmPlexSans"],
+                    "label-sm": ["ibmPlexSans"],
+                    "display-xl": ["ibmPlexSans"],
+                    "body-sm": ["ibmPlexSans"],
+                    "display-xl-mobile": ["ibmPlexSans"],
+                    "headline-lg": ["ibmPlexSans"],
+                    "headline-md": ["ibmPlexSans"],
+                    "body-md": ["ibmPlexSans"],
+                    "headline-lg-mobile": ["ibmPlexSans"]
+                },
+                fontSize: {
+                    "label-md": ["12px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                    "body-lg": ["18px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "300" }],
+                    "headline-sm": ["22px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" }],
+                    "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                    "display-xl": ["56px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "300" }],
+                    "body-sm": ["13px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                    "display-xl-mobile": ["38px", { "lineHeight": "50px", "letterSpacing": "-0.01em", "fontWeight": "300" }],
+                    "headline-lg": ["40px", { "lineHeight": "54px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+                    "headline-md": ["28px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "500" }],
+                    "body-md": ["15px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "400" }]
+                }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
