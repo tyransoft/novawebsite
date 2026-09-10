@@ -26,7 +26,15 @@ SECRET_KEY = 'django-insecure-dhj3bqxijcurx^mkc)2*=cg^a0et(m56ym^w0!le(sxts(oof3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['novababy.tip2.libyanspider.cloud/']
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://novababy.tip2.libyanspider.cloud/",
+
+]
+
+SITE_URL = "https://novababy.tip2.libyanspider.cloud/"
+
 
 
 # Application definition
@@ -116,16 +124,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
-
-ALLOWED_HOSTS = []
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://baytidoors.ly",
-    "https://www.baytidoors.ly"
-
-]
-
-SITE_URL = "https://baytidoors.ly"
 
 
 STATIC_URL = '/static/'
