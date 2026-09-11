@@ -57,41 +57,70 @@ h1, h2, h3, h4 { font-weight: 500; }
 </style>
 </head>
 <body class="bg-background text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+ <header class="fixed top-0 w-full z-50">
 
-<header class="fixed top-0 w-full z-50">
-  <div class="bg-primary text-on-primary px-4 py-1 text-center text-xs flex items-center justify-center gap-2 shadow-[0_1px_4px_rgba(82,26,122,0.15)]">
-    <span>صُنع بكل فخر في ليبيا | Made with pride in Libya</span>
+  <div class="bg-primary text-on-primary px-space-md py-space-2xs text-center font-label-sm text-label-sm flex items-center justify-center gap-space-xs shadow-[0_1px_4px_rgba(82,26,122,0.15)]">
+    <span >صُنع بكل فخر في ليبيا |made with pride in Libya</span>
   </div>
+
   <div class="bg-surface/85 backdrop-blur-xl shadow-[0_4px_24px_-4px_rgba(107,53,147,0.08)]">
-    <div class="h-20 max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between gap-4">
+    <div class="h-20 max-w-container-max mx-auto px-gutter-desktop flex items-center justify-between gap-space-lg">
+
       <a href="/" class="nova-logo shrink-0">
-        <img src="{% static 'logo.png' %}" alt="Nova Logo" class="nova-logo-img"/>
+        <img src="{% static 'logo.png' %}" 
+             alt= "Nova Logo"
+             class="nova-logo-img">
       </a>
-      <nav class="hidden xl:flex items-center gap-1 bg-surface-container-lowest/60 p-1 rounded-full shadow-[0_2px_12px_-2px_rgba(107,53,147,0.05)]">
-        <a class="px-4 py-2 rounded-full transition-all text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container" href="/">الرئيسية</a>
-        <a aria-current="page" class="px-4 py-2 rounded-full transition-all bg-surface-container text-primary font-bold shadow-sm text-sm" href="{% url 'products' %}">منتجاتنا</a>
-        <a class="px-4 py-2 rounded-full transition-all text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container" href="#">قصتنا</a>
-        <a class="px-4 py-2 rounded-full transition-all text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container" href="#">الجودة والتصنيع</a>
-        <a class="px-4 py-2 rounded-full transition-all text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container" href="#">لماذا تختارنا</a>
-        <a class="px-4 py-2 rounded-full transition-all text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container" href="#b2b-partnership">كن شريكاً</a>
+
+      <nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-lowest/60 p-space-2xs rounded-full shadow-[0_2px_12px_-2px_rgba(107,53,147,0.05)]">
+        <a aria-current="page" class="px-space-md py-space-xs rounded-full transition-all bg-surface-container text-primary font-bold shadow-sm" href="/">الرئيسية</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'products' %}">منتجاتنا</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'ourstory' %}">قصتنا</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'quality' %}">الجودة والتصنيع</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'why_us' %}">لماذا تختارنا</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'home' %}/#b2b-partnership">كن شريكاً</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'connectus' %}">تواصل معنا</a>
       </nav>
-      <button id="mobile-menu-btn" class="xl:hidden w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" aria-label="فتح القائمة">
+
+      <button id="mobile-menu-btn"
+              class="xl:hidden w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all"
+              aria-label="فتح القائمة">
         <span class="material-symbols-outlined" id="menu-icon">menu</span>
       </button>
+
     </div>
   </div>
-  <div id="mobile-menu" class="xl:hidden hidden absolute top-full left-0 w-full bg-surface/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(107,53,147,0.12)] border-t border-outline-variant/20">
-    <nav class="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-1">
-      <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">الرئيسية</a>
-      <a href="{% url 'products' %}" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-container text-primary font-bold">منتجاتنا</a>
-      <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">قصتنا</a>
-      <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">الجودة والتصنيع</a>
-      <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">لماذا تختارنا</a>
-      <a href="#b2b-partnership" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">كن شريكاً</a>
+
+  <div id="mobile-menu"
+       class="xl:hidden hidden absolute top-full left-0 w-full bg-surface/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(107,53,147,0.12)] border-t border-outline-variant/20">
+    <nav class="max-w-container-max mx-auto px-gutter-desktop py-space-lg flex flex-col gap-space-2xs">
+
+      <a href="/" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container text-primary font-bold">
+        الرئيسية
+      </a>
+      <a href="{% url 'products' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        منتجاتنا
+      </a>
+      <a href="{% url 'ourstory' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        قصتنا
+      </a>
+      <a href="{% url 'quality' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        الجودة والتصنيع
+      </a>
+      <a href="{% url 'why_us' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        لماذا تختارنا
+      </a>
+      <a href="{% url 'home' %}/#b2b-partnership" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        كن شريكاً
+      </a>
+      <a href="{% url 'connectus' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        تواصل معنا 
+      </a>
+
     </nav>
   </div>
-</header>
 
+</header>
 <main class="w-full pt-20 bg-background min-h-screen">
 
 <section class="relative w-full overflow-hidden bg-gradient-to-b from-secondary-fixed/30 via-surface to-background pt-16 pb-12">

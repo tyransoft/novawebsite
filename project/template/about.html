@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+{% load static %}
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<title>من نحن | نوڤا - علامة ليبية تابعة لشركة باب دجلة</title>
+<meta name="description" content="تعرّفي على شركة نوڤا، العلامة الليبية الطموحة التابعة لشركة باب دجلة، المتخصصة في تصنيع حفاضات الأطفال والمناديل المبللة بمعايير عالمية."/>
+<meta name="keywords" content="نوڤا, Nova, شركة باب دجلة, حفاضات ليبيا, عناية بالأطفال, صنع في ليبيا"/>
+<meta property="og:title" content="من نحن | نوڤا - علامة ليبية تابعة لشركة باب دجلة"/>
+<meta property="og:description" content="قصة علامة ليبية طموحة تهدف للتميز في صناعة العناية بالأطفال."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ request.build_absolute_uri }}"/>
+<link rel="canonical" href="{{ request.build_absolute_uri }}"/>
+<meta name="robots" content="index, follow"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "شركة نوڤا",
+  "alternateName": "NOVA",
+  "parentOrganization": {"@type": "Organization", "name": "شركة باب دجلة"},
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'logo.png' %}",
+  "foundingLocation": {"@type": "Place", "name": "ليبيا"},
+  "description": "علامة ليبية طموحة متخصصة في تصنيع حفاضات الأطفال والمناديل المبللة بمعايير عالمية."
+}
+</script>
+
+<style>
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "IBM Plex Sans", "IBM Plex Sans Arabic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+* { letter-spacing: 0; }
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+main > :first-child { margin-top: 0 !important; }
+main > :last-child { margin-bottom: 0 !important; }
+h1, h2, h3, h4 { font-weight: 500; }
+.nova-logo { display: inline-flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.nova-logo-img { width: 180px; height: auto; display: block; object-fit: contain; }
+@media (max-width: 768px) { .nova-logo-img { width: 150px; } }
+@media (max-width: 480px) { .nova-logo-img { width: 120px; } }
+</style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<header class="fixed top-0 w-full z-50">
+
+  <div class="bg-primary text-on-primary px-space-md py-space-2xs text-center font-label-sm text-label-sm flex items-center justify-center gap-space-xs shadow-[0_1px_4px_rgba(82,26,122,0.15)]">
+    <span >صُنع بكل فخر في ليبيا |made with pride in Libya</span>
+  </div>
+
+  <div class="bg-surface/85 backdrop-blur-xl shadow-[0_4px_24px_-4px_rgba(107,53,147,0.08)]">
+    <div class="h-20 max-w-container-max mx-auto px-gutter-desktop flex items-center justify-between gap-space-lg">
+
+      <a href="/" class="nova-logo shrink-0">
+        <img src="{% static 'logo.png' %}" 
+             alt= "Nova Logo"
+             class="nova-logo-img">
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-lowest/60 p-space-2xs rounded-full shadow-[0_2px_12px_-2px_rgba(107,53,147,0.05)]">
+        <a aria-current="page" class="px-space-md py-space-xs rounded-full transition-all bg-surface-container text-primary font-bold shadow-sm" href="/">الرئيسية</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'products' %}">منتجاتنا</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'ourstory' %}">قصتنا</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'quality' %}">الجودة والتصنيع</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'why_us' %}">لماذا تختارنا</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'home' %}/#b2b-partnership">كن شريكاً</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'connectus' %}">تواصل معنا</a>
+      </nav>
+
+      <button id="mobile-menu-btn"
+              class="xl:hidden w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all"
+              aria-label="فتح القائمة">
+        <span class="material-symbols-outlined" id="menu-icon">menu</span>
+      </button>
+
+    </div>
+  </div>
+
+  <div id="mobile-menu"
+       class="xl:hidden hidden absolute top-full left-0 w-full bg-surface/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(107,53,147,0.12)] border-t border-outline-variant/20">
+    <nav class="max-w-container-max mx-auto px-gutter-desktop py-space-lg flex flex-col gap-space-2xs">
+
+      <a href="/" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container text-primary font-bold">
+        الرئيسية
+      </a>
+      <a href="{% url 'products' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        منتجاتنا
+      </a>
+      <a href="{% url 'ourstory' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        قصتنا
+      </a>
+      <a href="{% url 'quality' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        الجودة والتصنيع
+      </a>
+      <a href="{% url 'why_us' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        لماذا تختارنا
+      </a>
+      <a href="{% url 'home' %}/#b2b-partnership" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        كن شريكاً
+      </a>
+      <a href="{% url 'connectus' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        تواصل معنا 
+      </a>
+
+    </nav>
+  </div>
+
+</header>
+<main class="w-full pt-20 bg-background min-h-screen">
+
+<section class="relative w-full overflow-hidden bg-gradient-to-b from-primary-fixed/30 via-surface to-background pt-16 pb-12">
+  <div class="absolute -top-24 right-10 w-96 h-96 rounded-full bg-primary-fixed/40 blur-3xl pointer-events-none"></div>
+  <div class="absolute top-1/2 left-0 w-80 h-80 rounded-full bg-secondary-fixed/40 blur-3xl pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+    <div class="max-w-3xl mx-auto text-center flex flex-col gap-5">
+      <div class="inline-flex items-center gap-2 bg-primary text-on-primary text-xs font-semibold px-4 py-1.5 rounded-full shadow-sm mx-auto">
+        <span class="material-symbols-outlined text-base">info</span>
+        من نحن • ABOUT NOVA
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+        علامة ليبية طموحة
+        <span class="block text-secondary mt-2 text-2xl sm:text-3xl lg:text-4xl">برؤية عالمية</span>
+      </h1>
+      <p class="text-base text-on-surface-variant leading-relaxed">
+        نوڤا هي علامة تجارية ليبية طموحة، تابعة لشركة باب دجلة، تأسست بهدف تقديم منتجات عناية بالأطفال بمعايير عالمية وبأسعار عادلة لكل أسرة ليبية. نؤمن أن الجودة حق لكل طفل، وأن الصناعة الوطنية قادرة على المنافسة العالمية.
+      </p>
+      <nav class="flex flex-wrap items-center justify-center gap-2 text-xs text-on-surface-variant pt-2">
+        <a href="/" class="hover:text-primary transition-colors">الرئيسية</a>
+        <span class="material-symbols-outlined text-sm">chevron_left</span>
+        <span class="text-primary font-bold">من نحن</span>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-12 sm:py-16 bg-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-6 flex flex-col gap-5 text-right">
+        <span class="text-xs font-bold text-secondary tracking-widest uppercase">من نحن</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-primary">قصة علامة وُلدت من رحم الاحتياج الليبي</h2>
+        <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+          انطلقت نوڤا من إيمان عميق بأن كل طفل ليبي يستحق منتجات عناية بمعايير أوروبية، مصنوعة محلياً بكل حب وإتقان. نحن جزء من شركة باب دجلة، التي تمتلك خبرة طويلة في مجال التوريد والصناعة والتوزيع داخل ليبيا.
+        </p>
+        <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+          منذ اليوم الأول، وضعنا نصب أعيننا هدفاً واحداً: أن نصنع في ليبيا منتجاً يفخر به كل أب وأم، وأن نثبت أن الجودة الليبية قادرة على منافسة المستورد بكل ثقة.
+        </p>
+        <div class="grid grid-cols-2 gap-4 pt-4">
+          <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/30">
+            <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+            <h3 class="text-base font-bold text-on-surface mt-2">صنع في ليبيا</h3>
+            <p class="text-xs text-on-surface-variant mt-1">فخر وطني وثقة عالمية</p>
+          </div>
+          <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/30">
+            <span class="material-symbols-outlined text-secondary text-3xl">diversity_3</span>
+            <h3 class="text-base font-bold text-on-surface mt-2">تابعة لباب دجلة</h3>
+            <p class="text-xs text-on-surface-variant mt-1">خبرة تراكمية موثوقة</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(107,53,147,0.15)] aspect-[4/3] bg-surface-container-low flex items-center justify-center">
+          <img src="{% static 'about-main.jpg' %}" alt="مصنع نوڤا في ليبيا" class="w-full h-full object-cover"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-12 sm:py-16 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold text-secondary tracking-widest uppercase">الشركة الأم</span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary mt-2">نوڤا علامة تابعة لشركة باب دجلة</h2>
+      <p class="text-sm sm:text-base text-on-surface-variant max-w-2xl mx-auto mt-3">
+        شركة باب دجلة هي الكيان الأم الذي يمتلك نوڤا بالكامل، ويوفر لها الدعم الصناعي واللوجستي والتوزيعي في جميع أنحاء ليبيا.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+      <div class="md:col-span-1 bg-surface-container-lowest p-8 rounded-2xl shadow-sm flex items-center justify-center aspect-square">
+        <img src="{% static 'bab-dijla-logo.png' %}" alt="شعار شركة باب دجلة" class="max-h-40 w-auto object-contain"/>
+      </div>
+      <div class="md:col-span-2 flex flex-col gap-4 text-right">
+        <h3 class="text-xl sm:text-2xl font-bold text-primary">شركة باب دجلة - بيت الخبرة الليبية</h3>
+        <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+          شركة باب دجلة هي شركة ليبية رائدة في مجال التوريد والتصنيع والتوزيع، تمتلك شبكة واسعة من العلاقات التجارية داخل ليبيا وخارجها. بفضل خبرتها الطويلة، استطاعت أن تطلق علامة نوڤا كخطوة استراتيجية نحو التصنيع المحلي بمعايير عالمية.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+          <div class="p-3 bg-surface-container-low rounded-lg text-center">
+            <span class="material-symbols-outlined text-primary text-2xl">factory</span>
+            <p class="text-xs font-bold text-on-surface mt-1">مصنع متكامل</p>
+          </div>
+          <div class="p-3 bg-surface-container-low rounded-lg text-center">
+            <span class="material-symbols-outlined text-primary text-2xl">local_shipping</span>
+            <p class="text-xs font-bold text-on-surface mt-1">أسطول توزيع</p>
+          </div>
+          <div class="p-3 bg-surface-container-low rounded-lg text-center">
+            <span class="material-symbols-outlined text-primary text-2xl">public</span>
+            <p class="text-xs font-bold text-on-surface mt-1">شبكة تجارية</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-12 sm:py-16 bg-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-gradient-to-br from-primary-fixed/40 to-surface-container-lowest p-8 rounded-3xl shadow-sm">
+        <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-on-primary text-2xl">visibility</span>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-bold text-primary mb-3">رؤيتنا</h3>
+        <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+          أن نكون العلامة الليبية الأولى في مجال العناية بالأطفال على مستوى شمال إفريقيا، وأن نصنع منتجات تفتخر بها كل أسرة، بمعايير أوروبية وخامات نقية وخبرة محلية.
+        </p>
+      </div>
+      <div class="bg-gradient-to-br from-secondary-fixed/40 to-surface-container-lowest p-8 rounded-3xl shadow-sm">
+        <div class="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-on-secondary text-2xl">flag</span>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-bold text-secondary mb-3">رسالتنا</h3>
+        <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+          توفير منتجات عناية عالية الجودة بأسعار عادلة لكل أسرة ليبية، مع الالتزام بالمعايير الطبية العالمية، ودعم الاقتصاد الوطني من خلال التصنيع المحلي والتوظيف.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-12 sm:py-16 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold text-secondary tracking-widest uppercase">أهدافنا</span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary mt-2">أهداف واضحة وطموحة</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm text-right">
+        <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-3">
+          <span class="material-symbols-outlined text-xl">trending_up</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface mb-2">الريادة السوقية</h3>
+        <p class="text-xs text-on-surface-variant leading-relaxed">أن نصبح العلامة الأولى في السوق الليبي خلال السنوات الخمس القادمة.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm text-right">
+        <div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary mb-3">
+          <span class="material-symbols-outlined text-xl">science</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface mb-2">الابتكار المستمر</h3>
+        <p class="text-xs text-on-surface-variant leading-relaxed">تطوير منتجاتنا باستمرار وفق أحدث التقنيات الأوروبية في العناية بالأطفال.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm text-right">
+        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary mb-3">
+          <span class="material-symbols-outlined text-xl">public</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface mb-2">التوسع الإقليمي</h3>
+        <p class="text-xs text-on-surface-variant leading-relaxed">التصدير إلى دول الجوار وشمال إفريقيا خلال السنوات القادمة.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm text-right">
+        <div class="w-12 h-12 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-secondary mb-3">
+          <span class="material-symbols-outlined text-xl">groups</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface mb-2">دعم المجتمع</h3>
+        <p class="text-xs text-on-surface-variant leading-relaxed">توفير فرص عمل للشباب الليبي ودعم الاقتصاد الوطني.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-12 sm:py-16 bg-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold text-secondary tracking-widest uppercase">لماذا نحن</span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary mt-2">لماذا يثق بنا الليبيون</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-xl">verified_user</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface">جودة موثوقة</h3>
+        <p class="text-xs text-on-surface-variant leading-relaxed">خامات نقية ومعايير طبية أوروبية في كل منتج.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+          <span class="material-symbols-outlined text-xl">savings</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface">سعر عادل</h3>
+        <p class="text-xs text-on-surface-variant leading-relaxed">أسعار تنافسية في متناول كل أسرة ليبية.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-xl">support_agent</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface">خدمة عملاء</h3>
+        <p class="text-xs text-on-surface-variant leading-relaxed">فريق دعم متاح للإجابة على استفساراتك في أي وقت.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-secondary">
+          <span class="material-symbols-outlined text-xl">local_shipping</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface">توزيع شامل</h3>
+        <p class="text-xs text-on-surface-variant leading-relaxed">شبكة توزيع تغطي جميع المدن الليبية الرئيسية.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-xl">eco</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface">صديق للبشرة</h3>
+        <p class="text-xs text-on-surface-variant leading-relaxed">منتجات مفحوصة جلدياً وخالية من الكحول والعطور القاسية.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+          <span class="material-symbols-outlined text-xl">flag</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface">صنع ليبي</h3>
+        <p class="text-xs text-on-surface-variant leading-relaxed">نفخر بأننا نصنع في ليبيا بكل إتقان ومهنية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-12 sm:py-16 bg-gradient-to-br from-primary via-primary-container to-on-primary-fixed text-on-primary relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,300 C200,450 400,200 600,350 C800,500 900,300 1000,400 L1000,1000 L0,1000 Z" fill="currentColor"></path>
+    </svg>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-4">انضمي إلى عائلة نوڤا</h2>
+    <p class="text-sm sm:text-base text-on-primary-container max-w-2xl mx-auto mb-6">
+      سواء كنت أمّاً تبحثين عن الأفضل لطفلك، أو شريكاً تجارياً يريد الانضمام لشبكتنا، نحن هنا من أجلك.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a href="{% url 'products' %}" class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container text-sm font-bold px-6 py-3 rounded-full shadow-lg hover:bg-secondary-fixed transition-all">
+        <span class="material-symbols-outlined text-xl">grid_view</span>
+        <span>تصفحي منتجاتنا</span>
+      </a>
+      <a href="https://wa.me/218910000000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-surface-container-lowest/15 backdrop-blur-md text-on-primary text-sm font-bold px-6 py-3 rounded-full hover:bg-surface-container-lowest/25 transition-all">
+        <span class="material-symbols-outlined text-xl">chat</span>
+        <span>تواصلي معنا</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="w-full bg-gradient-to-b from-surface-container-low to-[#f3e8ff] pt-12 pb-6 shadow-[0_-4px_24px_-4px_rgba(107,53,147,0.03)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
+      <div class="lg:col-span-2 flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-primary text-xl">child_care</span>
+          </div>
+          <span class="text-lg font-bold text-primary">NOVA • شركة نوڤا</span>
+        </div>
+        <p class="text-sm text-on-surface-variant max-w-md leading-relaxed">
+          الشركة الوطنية الرائدة في تصنيع حفاضات الأطفال والمناديل المبللة في ليبيا، تابعة لشركة باب دجلة.
+        </p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <h4 class="text-base font-bold text-on-surface">المنتجات</h4>
+        <ul class="flex flex-col gap-2 text-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="{% url 'products_baby_diapers' %}">حفاضات الأطفال</a></li>
+          <li><a class="hover:text-primary transition-colors" href="{% url 'products_wipes' %}">مناديل الرضع</a></li>
+          <li><a class="hover:text-primary transition-colors" href="{% url 'products_personal_care' %}">عناية بالمرأة والوجه</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-3">
+        <h4 class="text-base font-bold text-on-surface">روابط سريعة</h4>
+        <ul class="flex flex-col gap-2 text-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="{% url 'about' %}">من نحن</a></li>
+          <li><a class="hover:text-primary transition-colors" href="{% url 'our_story' %}">قصتنا</a></li>
+          <li><a class="hover:text-primary transition-colors" href="{% url 'quality' %}">الجودة والتصنيع</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-3">
+        <h4 class="text-base font-bold text-on-surface">التواصل</h4>
+        <div class="flex flex-col gap-2 text-sm text-on-surface-variant">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-lg">call</span>
+            <span dir="ltr">+218 (21) 489-0123</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-lg">chat</span>
+            <span>واتساب: 218910000000+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-on-surface-variant border-t border-outline-variant/30">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+        <span>جميع الحقوق محفوظة © 2026 شركة نوڤا - تابعة لشركة باب دجلة. صنع بفخر في ليبيا.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const btn = document.getElementById('mobile-menu-btn');
+const menu = document.getElementById('mobile-menu');
+const icon = document.getElementById('menu-icon');
+btn.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+  icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+});
+menu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    icon.textContent = 'menu';
+  });
+});
+</script>
+
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "inverse-on-surface": "#f5eefe", "on-primary-fixed-variant": "#622c8a", "tertiary-container": "#4f4f53",
+        "surface-container-highest": "#e7e0ef", "surface-container": "#f2ebfb", "surface-bright": "#fdf7ff",
+        "on-secondary-fixed": "#001e30", "primary-fixed": "#f3daff", "surface-tint": "#7c45a4", "tertiary": "#38383c",
+        "secondary-fixed-dim": "#8ccdff", "inverse-surface": "#322f3a", "on-secondary": "#ffffff", "on-surface": "#1d1a25",
+        "on-error-container": "#93000a", "on-tertiary-container": "#c2c1c5", "secondary": "#006493", "surface-dim": "#ded7e7",
+        "outline": "#7e7481", "on-secondary-container": "#004465", "on-primary-container": "#deaeff", "surface": "#fdf7ff",
+        "on-secondary-fixed-variant": "#004b70", "error": "#ba1a1a", "on-tertiary": "#ffffff", "background": "#fdf7ff",
+        "on-tertiary-fixed": "#1b1b1f", "error-container": "#ffdad6", "on-primary-fixed": "#2e004d", "on-primary": "#ffffff",
+        "on-tertiary-fixed-variant": "#46464a", "primary-fixed-dim": "#e2b6ff", "primary-container": "#6b3593",
+        "inverse-primary": "#e2b6ff", "on-background": "#1d1a25", "secondary-container": "#36b5fd",
+        "outline-variant": "#cfc3d2", "surface-container-high": "#ede5f5", "surface-container-lowest": "#ffffff",
+        "surface-variant": "#e7e0ef", "on-error": "#ffffff", "primary": "#521a7a", "tertiary-fixed": "#e3e2e7",
+        "on-surface-variant": "#4c4450", "tertiary-fixed-dim": "#c7c6cb", "secondary-fixed": "#cae6ff",
+        "surface-container-low": "#f8f1ff"
+      },
+      borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+      fontFamily: {
+        "label-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"], "body-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+        "headline-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"], "label-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+        "body-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"], "headline-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+        "body-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"]
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
