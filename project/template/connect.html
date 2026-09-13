@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+{% load static %}
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<title>تواصل معنا | نوڤا - نحن هنا من أجلك</title>
+<meta name="description" content="تواصلي مع فريق نوڤا عبر واتساب. خدمة عملاء مخصصة للأمهات، وقسم خاص لرجال الأعمال والموزعين. نحن هنا للإجابة على كل استفساراتك."/>
+<meta name="keywords" content="تواصل معنا, نوڤا, خدمة عملاء, واتساب, موزعين, شركاء تجاريين"/>
+<meta property="og:title" content="تواصل معنا | نوڤا"/>
+<meta property="og:description" content="فريق نوڤا جاهز لخدمتك عبر واتساب في أي وقت."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ request.build_absolute_uri }}"/>
+<link rel="canonical" href="{{ request.build_absolute_uri }}"/>
+<meta name="robots" content="index, follow"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "تواصل معنا - نوڤا",
+  "description": "صفحة التواصل الرسمية لشركة نوڤا",
+  "url": "{{ request.build_absolute_uri }}"
+}
+</script>
+
+<style>
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "IBM Plex Sans", "IBM Plex Sans Arabic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+* { letter-spacing: 0; }
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+main > :first-child { margin-top: 0 !important; }
+main > :last-child { margin-bottom: 0 !important; }
+h1, h2, h3, h4 { font-weight: 500; }
+.nova-logo { display: inline-flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.nova-logo-img { width: 180px; height: auto; display: block; object-fit: contain; }
+@media (max-width: 768px) { .nova-logo-img { width: 150px; } }
+@media (max-width: 480px) { .nova-logo-img { width: 120px; } }
+</style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+
+<header class="fixed top-0 w-full z-50">
+  <div class="bg-primary text-on-primary px-4 py-1 text-center text-xs flex items-center justify-center gap-2 shadow-[0_1px_4px_rgba(82,26,122,0.15)]">
+    <span>صُنع بكل فخر في ليبيا | Made with pride in Libya</span>
+  </div>
+  <div class="bg-surface/85 backdrop-blur-xl shadow-[0_4px_24px_-4px_rgba(107,53,147,0.08)]">
+    <div class="h-20 max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between gap-4">
+      <a href="/" class="nova-logo shrink-0">
+        <img src="{% static 'logo.png' %}" alt="Nova Logo" class="nova-logo-img"/>
+      </a>
+      <nav class="hidden xl:flex items-center gap-1 bg-surface-container-lowest/60 p-1 rounded-full shadow-[0_2px_12px_-2px_rgba(107,53,147,0.05)]">
+        <a class="px-4 py-2 rounded-full transition-all text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container" href="/">الرئيسية</a>
+        <a class="px-4 py-2 rounded-full transition-all text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container" href="{% url 'products' %}">منتجاتنا</a>
+        <a class="px-4 py-2 rounded-full transition-all text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container" href="{% url 'ourstory' %}">قصتنا</a>
+        <a class="px-4 py-2 rounded-full transition-all text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container" href="{% url 'quality' %}">الجودة والتصنيع</a>
+        <a class="px-4 py-2 rounded-full transition-all text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container" href="{% url 'why_us' %}">لماذا تختارنا</a>
+        <a class="px-4 py-2 rounded-full transition-all text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container" href="{% url 'home' %}#b2b-partnership">كن شريكاً</a>
+        <a aria-current="page" class="px-4 py-2 rounded-full transition-all bg-surface-container text-primary font-bold shadow-sm text-sm" href="{% url 'connectus' %}">تواصل معنا</a>
+      </nav>
+      <button id="mobile-menu-btn" class="xl:hidden w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" aria-label="فتح القائمة">
+        <span class="material-symbols-outlined" id="menu-icon">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="xl:hidden hidden absolute top-full left-0 w-full bg-surface/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(107,53,147,0.12)] border-t border-outline-variant/20">
+    <nav class="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-1">
+      <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">الرئيسية</a>
+      <a href="{% url 'products' %}" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">منتجاتنا</a>
+      <a href="{% url 'ourstory' %}" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">قصتنا</a>
+      <a href="{% url 'quality' %}" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">الجودة والتصنيع</a>
+      <a href="{% url 'why_us' %}" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">لماذا تختارنا</a>
+      <a href="{% url 'home' %}#b2b-partnership" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">كن شريكاً</a>
+      <a href="{% url 'connectus' %}" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-container text-primary font-bold">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
+
+<main class="w-full pt-20 bg-background min-h-screen">
+
+<section class="relative w-full overflow-hidden bg-gradient-to-b from-primary-fixed/30 via-surface to-background pt-16 pb-12">
+  <div class="absolute -top-24 right-10 w-96 h-96 rounded-full bg-primary-fixed/40 blur-3xl pointer-events-none"></div>
+  <div class="absolute top-1/2 left-0 w-80 h-80 rounded-full bg-secondary-fixed/40 blur-3xl pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+    <div class="max-w-3xl mx-auto text-center flex flex-col gap-5">
+      <div class="inline-flex items-center gap-2 bg-primary text-on-primary text-xs font-semibold px-4 py-1.5 rounded-full shadow-sm mx-auto">
+        <span class="material-symbols-outlined text-base">chat</span>
+        تواصل معنا • CONTACT US
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+        نحن هنا من أجلك
+        <span class="block text-secondary mt-2 text-2xl sm:text-3xl lg:text-4xl">تواصل معنا في أي وقت</span>
+      </h1>
+      <p class="text-base text-on-surface-variant leading-relaxed">
+        سواء كنت أمّاً تبحثين عن الأفضل لطفلك، أو رجل أعمال يريد الانضمام إلى شبكتنا التجارية، فريق نوڤا جاهز لخدمتك. اختر القسم المناسب وابدأ التواصل مباشرة عبر واتساب.
+      </p>
+      <nav class="flex flex-wrap items-center justify-center gap-2 text-xs text-on-surface-variant pt-2">
+        <a href="/" class="hover:text-primary transition-colors">الرئيسية</a>
+        <span class="material-symbols-outlined text-sm">chevron_left</span>
+        <span class="text-primary font-bold">تواصل معنا</span>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-12 sm:py-16 bg-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+
+      <div class="bg-gradient-to-br from-primary-fixed/40 to-surface-container-lowest p-8 rounded-3xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] flex flex-col gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0">
+            <span class="material-symbols-outlined text-3xl">pregnant_woman</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest">للأمهات</span>
+            <h2 class="text-xl sm:text-2xl font-bold text-primary">استفسارات الأمهات</h2>
+          </div>
+        </div>
+        <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+          عزيزتي الأم، نحن هنا للإجابة على جميع استفساراتك حول منتجات نوڤا: المقاسات، المكونات، طرق الاستخدام، أو أي سؤال يخص بشرة طفلك. فريق خدمة العملاء جاهز لمساعدتك.
+        </p>
+
+        <form class="flex flex-col gap-4 text-right" onsubmit="sendToWhatsApp(event, 'mother')">
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">اسمك الكريم *</label>
+            <input class="w-full bg-surface-container-lowest px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30" placeholder="مثال: أم محمد" required type="text" id="mother-name"/>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">رقم الهاتف *</label>
+            <input class="w-full bg-surface-container-lowest px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30" dir="ltr" placeholder="091XXXXXXX" required type="tel" id="mother-phone"/>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">المدينة</label>
+            <select class="w-full bg-surface-container-lowest px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30" id="mother-city">
+              <option>طرابلس الكبرى</option>
+              <option>بنغازي</option>
+              <option>مصراتة</option>
+              <option>الزاوية</option>
+              <option>سبها والجنوب</option>
+              <option>البيضاء / طبرق</option>
+              <option>زليتن</option>
+              <option>مدينة أخرى</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">موضوع الاستفسار *</label>
+            <select class="w-full bg-surface-container-lowest px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30" required id="mother-subject">
+              <option value="استفسار عن حفاضات الأطفال">استفسار عن حفاضات الأطفال</option>
+              <option value="استفسار عن مناديل الرضع">استفسار عن مناديل الرضع</option>
+              <option value="استفسار عن عناية بالمرأة والوجه">استفسار عن عناية بالمرأة والوجه</option>
+              <option value="اختيار المقاس المناسب">اختيار المقاس المناسب</option>
+              <option value="شكوى أو ملاحظة">شكوى أو ملاحظة</option>
+              <option value="استفسار عام">استفسار عام</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">رسالتك</label>
+            <textarea class="w-full bg-surface-container-lowest px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-primary border border-outline-variant/30 resize-none" placeholder="اكتبي استفسارك هنا..." rows="3" id="mother-message"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-primary text-on-primary text-sm font-bold py-3.5 rounded-full shadow-[0_8px_20px_rgba(82,26,122,0.3)] hover:bg-primary-container transition-all flex items-center justify-center gap-2 mt-2">
+            <span class="material-symbols-outlined text-xl">chat</span>
+            <span>إرسال عبر واتساب</span>
+          </button>
+          <p class="text-xs text-on-surface-variant text-center">
+            سيتم تحويلك مباشرة إلى واتساب مع رسالتك جاهزة
+          </p>
+        </form>
+      </div>
+
+      <div class="bg-gradient-to-br from-secondary-fixed/40 to-surface-container-lowest p-8 rounded-3xl shadow-[0_4px_20px_-2px_rgba(0,100,147,0.06)] flex flex-col gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-full bg-secondary flex items-center justify-center text-on-secondary shrink-0">
+            <span class="material-symbols-outlined text-3xl">storefront</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs font-bold text-secondary uppercase tracking-widest">لرجال الأعمال</span>
+            <h2 class="text-xl sm:text-2xl font-bold text-secondary">الشراكات التجارية</h2>
+          </div>
+        </div>
+        <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+          أصحاب الصيدليات، الموزعين، سلاسل السوبرماركت، والمستثمرين: انضموا إلى شبكة نوڤا التجارية. عروض أسعار تفضيلية، دعم لوجستي كامل، وفرص نمو ممتازة.
+        </p>
+
+        <form class="flex flex-col gap-4 text-right" onsubmit="sendToWhatsApp(event, 'business')">
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">اسم النشاط التجاري *</label>
+            <input class="w-full bg-surface-container-lowest px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-secondary border border-outline-variant/30" placeholder="مثال: صيدلية النقاء الحديثة" required type="text" id="business-name"/>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">اسم المسؤول ورقم الهاتف *</label>
+            <input class="w-full bg-surface-container-lowest px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-secondary border border-outline-variant/30" dir="ltr" placeholder="091XXXXXXX" required type="tel" id="business-phone"/>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1">
+              <label class="text-xs font-bold text-on-surface">المدينة *</label>
+              <select class="w-full bg-surface-container-lowest px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-secondary border border-outline-variant/30" id="business-city">
+                <option>طرابلس الكبرى</option>
+                <option>بنغازي</option>
+                <option>مصراتة</option>
+                <option>الزاوية</option>
+                <option>سبها والجنوب</option>
+                <option>البيضاء / طبرق</option>
+                <option>زليتن</option>
+                <option>مدينة أخرى</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="text-xs font-bold text-on-surface">نوع النشاط *</label>
+              <select class="w-full bg-surface-container-lowest px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-secondary border border-outline-variant/30" required id="business-type">
+                <option value="موزع جملة ومورد رئيسي">موزع جملة ومورد رئيسي</option>
+                <option value="صيدلية">صيدلية</option>
+                <option value="سوبرماركت">سوبرماركت</option>
+                <option value="مستورد / وكيل حصري">مستورد / وكيل حصري</option>
+                <option value="مستثمر">مستثمر</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">موضوع الرسالة *</label>
+            <select class="w-full bg-surface-container-lowest px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-secondary border border-outline-variant/30" required id="business-subject">
+              <option value="طلب تسعير جملة">طلب تسعير جملة</option>
+              <option value="طلب عينات توريد">طلب عينات توريد</option>
+              <option value="الانضمام كموزع معتمد">الانضمام كموزع معتمد</option>
+              <option value="عقد وكالة حصرية">عقد وكالة حصرية</option>
+              <option value="شراكة استراتيجية">شراكة استراتيجية</option>
+              <option value="استفسار عام">استفسار عام</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">تفاصيل إضافية</label>
+            <textarea class="w-full bg-surface-container-lowest px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-secondary border border-outline-variant/30 resize-none" placeholder="اكتب تفاصيل طلبك هنا..." rows="3" id="business-message"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-secondary text-on-secondary text-sm font-bold py-3.5 rounded-full shadow-[0_8px_20px_rgba(0,100,147,0.3)] hover:bg-secondary-container hover:text-on-secondary-container transition-all flex items-center justify-center gap-2 mt-2">
+            <span class="material-symbols-outlined text-xl">chat</span>
+            <span>إرسال عبر واتساب</span>
+          </button>
+          <p class="text-xs text-on-surface-variant text-center">
+            سيتم تحويلك مباشرة إلى واتساب مع رسالتك جاهزة
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-12 sm:py-16 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold text-secondary tracking-widest uppercase">قنوات التواصل المباشر</span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary mt-2">طرق أخرى للتواصل معنا</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <a href="https://wa.me/218910000000" target="_blank" rel="noopener noreferrer" class="product-card bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-[0_16px_36px_-6px_rgba(107,53,147,0.14)] transition-all flex flex-col gap-3 items-center text-center group">
+        <div class="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center text-white">
+          <span class="material-symbols-outlined text-2xl">chat</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface group-hover:text-primary transition-colors">واتساب</h3>
+        <p class="text-xs text-on-surface-variant">تواصل فوري</p>
+        <span class="text-sm font-bold text-primary mt-1" dir="ltr">+218 91 000 0000</span>
+      </a>
+
+      <a href="tel:+218214890123" class="product-card bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-[0_16px_36px_-6px_rgba(107,53,147,0.14)] transition-all flex flex-col gap-3 items-center text-center group">
+        <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary">
+          <span class="material-symbols-outlined text-2xl">call</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface group-hover:text-primary transition-colors">اتصل بنا</h3>
+        <p class="text-xs text-on-surface-variant">9 ص - 9 م</p>
+        <span class="text-sm font-bold text-primary mt-1" dir="ltr">+218 21 489 0123</span>
+      </a>
+
+      <a href="mailto:sales@nova-hygiene.ly" class="product-card bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-[0_16px_36px_-6px_rgba(107,53,147,0.14)] transition-all flex flex-col gap-3 items-center text-center group">
+        <div class="w-14 h-14 rounded-full bg-secondary flex items-center justify-center text-on-secondary">
+          <span class="material-symbols-outlined text-2xl">mail</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface group-hover:text-secondary transition-colors">البريد الإلكتروني</h3>
+        <p class="text-xs text-on-surface-variant">رد خلال 24 ساعة</p>
+        <span class="text-sm font-bold text-secondary mt-1">sales@nova-hygiene.ly</span>
+      </a>
+
+      <a href="https://maps.google.com/?q=طرابلس+ليبيا" target="_blank" rel="noopener noreferrer" class="product-card bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-[0_16px_36px_-6px_rgba(107,53,147,0.14)] transition-all flex flex-col gap-3 items-center text-center group">
+        <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+          <span class="material-symbols-outlined text-2xl">location_on</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface group-hover:text-primary transition-colors">العنوان</h3>
+        <p class="text-xs text-on-surface-variant">المقر الرئيسي</p>
+        <span class="text-sm font-bold text-primary mt-1">طرابلس - ليبيا</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-12 sm:py-16 bg-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold text-secondary tracking-widest uppercase">الأسئلة الشائعة</span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary mt-2">إجابات سريعة لأكثر الأسئلة شيوعاً</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+            <span class="material-symbols-outlined text-xl">help</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-base font-bold text-on-surface">كيف أختار المقاس المناسب لطفلي؟</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">يعتمد اختيار المقاس على وزن طفلك. راجعي صفحة المنتجات حيث نوضح الوزن المناسب لكل مقاس، أو تواصلي معنا عبر واتساب وسنساعدك في الاختيار.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+            <span class="material-symbols-outlined text-xl">local_shipping</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-base font-bold text-on-surface">هل توصلون لجميع المدن الليبية؟</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">نعم، لدينا شبكة توزيع تغطي جميع المدن الليبية الرئيسية، مع ضمان توفر دائم في الصيدليات والمتاجر.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary shrink-0">
+            <span class="material-symbols-outlined text-xl">storefront</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-base font-bold text-on-surface">كيف أصبح موزعاً معتمداً؟</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">يمكنك ملء نموذج رجال الأعمال أعلاه، وسيتواصل معك مدير المبيعات خلال 24 ساعة عمل لشرح شروط الشراكة.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-secondary shrink-0">
+            <span class="material-symbols-outlined text-xl">verified</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-base font-bold text-on-surface">ما هي معايير الجودة لديكم؟</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">منتجاتنا مصنوعة بمعايير أوروبية ISO و CE، مفحوصة جلدياً بدرجة pH 5.5، وخالية من الكحول والعطور القاسية.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-12 sm:py-16 bg-gradient-to-br from-primary via-primary-container to-on-primary-fixed text-on-primary relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,300 C200,450 400,200 600,350 C800,500 900,300 1000,400 L1000,1000 L0,1000 Z" fill="currentColor"></path>
+    </svg>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-4">فريق نوڤا في خدمتك</h2>
+    <p class="text-sm sm:text-base text-on-primary-container max-w-2xl mx-auto mb-6">
+      نحن هنا للإجابة على كل استفساراتك. اختاري القسم المناسب وتواصلي معنا مباشرة عبر واتساب.
+    </p>
+    <a href="https://wa.me/218910000000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container text-sm font-bold px-6 py-3 rounded-full shadow-lg hover:bg-secondary-fixed transition-all">
+      <span class="material-symbols-outlined text-xl">chat</span>
+      <span>تواصل معنا الآن</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="w-full bg-gradient-to-b from-surface-container-low to-[#f3e8ff] pt-12 pb-6 shadow-[0_-4px_24px_-4px_rgba(107,53,147,0.03)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
+      <div class="lg:col-span-2 flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-primary text-xl">child_care</span>
+          </div>
+          <span class="text-lg font-bold text-primary">NOVA • شركة نوڤا</span>
+        </div>
+        <p class="text-sm text-on-surface-variant max-w-md leading-relaxed">الشركة الوطنية الرائدة في تصنيع حفاضات الأطفال والمناديل المبللة في ليبيا، تابعة لشركة باب دجلة.</p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <h4 class="text-base font-bold text-on-surface">المنتجات</h4>
+        <ul class="flex flex-col gap-2 text-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="{% url 'products_baby_diapers' %}">حفاضات الأطفال</a></li>
+          <li><a class="hover:text-primary transition-colors" href="{% url 'products_wipes' %}">مناديل الرضع</a></li>
+          <li><a class="hover:text-primary transition-colors" href="{% url 'products_personal_care' %}">عناية بالمرأة والوجه</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-3">
+        <h4 class="text-base font-bold text-on-surface">روابط سريعة</h4>
+        <ul class="flex flex-col gap-2 text-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="{% url 'ourstory' %}">قصتنا</a></li>
+          <li><a class="hover:text-primary transition-colors" href="{% url 'quality' %}">الجودة والتصنيع</a></li>
+          <li><a class="hover:text-primary transition-colors" href="{% url 'why_us' %}">لماذا تختارنا</a></li>
+          <li><a class="hover:text-primary transition-colors" href="{% url 'connectus' %}">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-3">
+        <h4 class="text-base font-bold text-on-surface">التواصل</h4>
+        <div class="flex flex-col gap-2 text-sm text-on-surface-variant">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-lg">call</span>
+            <span dir="ltr">+218 (21) 489-0123</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-lg">chat</span>
+            <span>واتساب: 218910000000+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-on-surface-variant border-t border-outline-variant/30">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+        <span>جميع الحقوق محفوظة © 2026 شركة نوڤا - تابعة لشركة باب دجلة. صنع بفخر في ليبيا.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const btn = document.getElementById('mobile-menu-btn');
+const menu = document.getElementById('mobile-menu');
+const icon = document.getElementById('menu-icon');
+btn.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+  icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+});
+menu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    icon.textContent = 'menu';
+  });
+});
+
+const WHATSAPP_NUMBER = "218910000000";
+
+function sendToWhatsApp(event, type) {
+  event.preventDefault();
+  
+  let message = "";
+  
+  if (type === 'mother') {
+    const name = document.getElementById('mother-name').value;
+    const phone = document.getElementById('mother-phone').value;
+    const city = document.getElementById('mother-city').value;
+    const subject = document.getElementById('mother-subject').value;
+    const msg = document.getElementById('mother-message').value;
+    
+    message = `🌸 *استفسار من أم - نوڤا*\n\n`;
+    message += `👤 *الاسم:* ${name}\n`;
+    message += `📱 *الهاتف:* ${phone}\n`;
+    message += `📍 *المدينة:* ${city}\n`;
+    message += `📋 *الموضوع:* ${subject}\n`;
+    if (msg) message += `\n💬 *الرسالة:*\n${msg}`;
+    
+  } else {
+    const name = document.getElementById('business-name').value;
+    const phone = document.getElementById('business-phone').value;
+    const city = document.getElementById('business-city').value;
+    const btype = document.getElementById('business-type').value;
+    const subject = document.getElementById('business-subject').value;
+    const msg = document.getElementById('business-message').value;
+    
+    message = `💼 *طلب شراكة تجارية - نوڤا*\n\n`;
+    message += `🏢 *النشاط:* ${name}\n`;
+    message += `📱 *الهاتف:* ${phone}\n`;
+    message += `📍 *المدينة:* ${city}\n`;
+    message += `🏪 *نوع النشاط:* ${btype}\n`;
+    message += `📋 *الموضوع:* ${subject}\n`;
+    if (msg) message += `\n💬 *التفاصيل:*\n${msg}`;
+  }
+  
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+}
+</script>
+
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "inverse-on-surface": "#f5eefe",
+          "on-primary-fixed-variant": "#622c8a",
+          "tertiary-container": "#4f4f53",
+          "surface-container-highest": "#e7e0ef",
+          "surface-container": "#f2ebfb",
+          "surface-bright": "#fdf7ff",
+          "on-secondary-fixed": "#001e30",
+          "primary-fixed": "#f3daff",
+          "surface-tint": "#7c45a4",
+          "tertiary": "#38383c",
+          "secondary-fixed-dim": "#8ccdff",
+          "inverse-surface": "#322f3a",
+          "on-secondary": "#ffffff",
+          "on-surface": "#1d1a25",
+          "on-error-container": "#93000a",
+          "on-tertiary-container": "#c2c1c5",
+          "secondary": "#006493",
+          "surface-dim": "#ded7e7",
+          "outline": "#7e7481",
+          "on-secondary-container": "#004465",
+          "on-primary-container": "#deaeff",
+          "surface": "#fdf7ff",
+          "on-secondary-fixed-variant": "#004b70",
+          "error": "#ba1a1a",
+          "on-tertiary": "#ffffff",
+          "background": "#fdf7ff",
+          "on-tertiary-fixed": "#1b1b1f",
+          "error-container": "#ffdad6",
+          "on-primary-fixed": "#2e004d",
+          "on-primary": "#ffffff",
+          "on-tertiary-fixed-variant": "#46464a",
+          "primary-fixed-dim": "#e2b6ff",
+          "primary-container": "#6b3593",
+          "inverse-primary": "#e2b6ff",
+          "on-background": "#1d1a25",
+          "secondary-container": "#36b5fd",
+          "outline-variant": "#cfc3d2",
+          "surface-container-high": "#ede5f5",
+          "surface-container-lowest": "#ffffff",
+          "surface-variant": "#e7e0ef",
+          "on-error": "#ffffff",
+          "primary": "#521a7a",
+          "tertiary-fixed": "#e3e2e7",
+          "on-surface-variant": "#4c4450",
+          "tertiary-fixed-dim": "#c7c6cb",
+          "secondary-fixed": "#cae6ff",
+          "surface-container-low": "#f8f1ff"
+        },
+        borderRadius: {
+          "DEFAULT": "1rem",
+          "lg": "2rem",
+          "xl": "3rem",
+          "full": "9999px"
+        },
+        fontFamily: {
+          "label-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "body-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "headline-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "label-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "body-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "headline-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "body-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"]
+        }
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

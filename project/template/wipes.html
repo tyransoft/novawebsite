@@ -74,7 +74,9 @@ h1, h2, h3, h4 { font-weight: 500; }
 
       <nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-lowest/60 p-space-2xs rounded-full shadow-[0_2px_12px_-2px_rgba(107,53,147,0.05)]">
         <a aria-current="page" class="px-space-md py-space-xs rounded-full transition-all bg-surface-container text-primary font-bold shadow-sm" href="/">الرئيسية</a>
-        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'products' %}">منتجاتنا</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all"  aria-current="page" href="{% url 'products' %}">منتجاتنا</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'about' %}">من نحن؟</a>
+
         <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'ourstory' %}">قصتنا</a>
         <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'quality' %}">الجودة والتصنيع</a>
         <a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="{% url 'why_us' %}">لماذا تختارنا</a>
@@ -100,6 +102,9 @@ h1, h2, h3, h4 { font-weight: 500; }
       </a>
       <a href="{% url 'products' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
         منتجاتنا
+      </a>
+      <a href="{% url 'about' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
+        من نحن؟
       </a>
       <a href="{% url 'ourstory' %}" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">
         قصتنا
@@ -369,72 +374,111 @@ menu.querySelectorAll('a').forEach(link => {
 </script>
 
 <script id="tailwind-config">
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "inverse-on-surface": "#f5eefe",
-        "on-primary-fixed-variant": "#622c8a",
-        "tertiary-container": "#4f4f53",
-        "surface-container-highest": "#e7e0ef",
-        "surface-container": "#f2ebfb",
-        "surface-bright": "#fdf7ff",
-        "on-secondary-fixed": "#001e30",
-        "primary-fixed": "#f3daff",
-        "surface-tint": "#7c45a4",
-        "tertiary": "#38383c",
-        "secondary-fixed-dim": "#8ccdff",
-        "inverse-surface": "#322f3a",
-        "on-secondary": "#ffffff",
-        "on-surface": "#1d1a25",
-        "on-error-container": "#93000a",
-        "on-tertiary-container": "#c2c1c5",
-        "secondary": "#006493",
-        "surface-dim": "#ded7e7",
-        "outline": "#7e7481",
-        "on-secondary-container": "#004465",
-        "on-primary-container": "#deaeff",
-        "surface": "#fdf7ff",
-        "on-secondary-fixed-variant": "#004b70",
-        "error": "#ba1a1a",
-        "on-tertiary": "#ffffff",
-        "background": "#fdf7ff",
-        "on-tertiary-fixed": "#1b1b1f",
-        "error-container": "#ffdad6",
-        "on-primary-fixed": "#2e004d",
-        "on-primary": "#ffffff",
-        "on-tertiary-fixed-variant": "#46464a",
-        "primary-fixed-dim": "#e2b6ff",
-        "primary-container": "#6b3593",
-        "inverse-primary": "#e2b6ff",
-        "on-background": "#1d1a25",
-        "secondary-container": "#36b5fd",
-        "outline-variant": "#cfc3d2",
-        "surface-container-high": "#ede5f5",
-        "surface-container-lowest": "#ffffff",
-        "surface-variant": "#e7e0ef",
-        "on-error": "#ffffff",
-        "primary": "#521a7a",
-        "tertiary-fixed": "#e3e2e7",
-        "on-surface-variant": "#4c4450",
-        "tertiary-fixed-dim": "#c7c6cb",
-        "secondary-fixed": "#cae6ff",
-        "surface-container-low": "#f8f1ff"
-      },
-      borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
-      fontFamily: {
-        "label-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
-        "body-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
-        "headline-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
-        "label-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
-        "body-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
-        "headline-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
-        "body-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"]
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "inverse-on-surface": "#f5eefe",
+          "on-primary-fixed-variant": "#622c8a",
+          "tertiary-container": "#4f4f53",
+          "surface-container-highest": "#e7e0ef",
+          "surface-container": "#f2ebfb",
+          "surface-bright": "#fdf7ff",
+          "on-secondary-fixed": "#001e30",
+          "primary-fixed": "#f3daff",
+          "surface-tint": "#7c45a4",
+          "tertiary": "#38383c",
+          "secondary-fixed-dim": "#8ccdff",
+          "inverse-surface": "#322f3a",
+          "on-secondary": "#ffffff",
+          "on-surface": "#1d1a25",
+          "on-error-container": "#93000a",
+          "on-tertiary-container": "#c2c1c5",
+          "secondary": "#006493",
+          "surface-dim": "#ded7e7",
+          "outline": "#7e7481",
+          "on-secondary-container": "#004465",
+          "on-primary-container": "#deaeff",
+          "surface": "#fdf7ff",
+          "on-secondary-fixed-variant": "#004b70",
+          "error": "#ba1a1a",
+          "on-tertiary": "#ffffff",
+          "background": "#fdf7ff",
+          "on-tertiary-fixed": "#1b1b1f",
+          "error-container": "#ffdad6",
+          "on-primary-fixed": "#2e004d",
+          "on-primary": "#ffffff",
+          "on-tertiary-fixed-variant": "#46464a",
+          "primary-fixed-dim": "#e2b6ff",
+          "primary-container": "#6b3593",
+          "inverse-primary": "#e2b6ff",
+          "on-background": "#1d1a25",
+          "secondary-container": "#36b5fd",
+          "outline-variant": "#cfc3d2",
+          "surface-container-high": "#ede5f5",
+          "surface-container-lowest": "#ffffff",
+          "surface-variant": "#e7e0ef",
+          "on-error": "#ffffff",
+          "primary": "#521a7a",
+          "tertiary-fixed": "#e3e2e7",
+          "on-surface-variant": "#4c4450",
+          "tertiary-fixed-dim": "#c7c6cb",
+          "secondary-fixed": "#cae6ff",
+          "surface-container-low": "#f8f1ff"
+        },
+        borderRadius: {
+          "DEFAULT": "1rem",
+          "lg": "2rem",
+          "xl": "3rem",
+          "full": "9999px"
+        },
+        spacing: {
+          "space-2xl": "3rem",
+          "container-max": "1280px",
+          "space-xs": "0.5rem",
+          "space-4xl": "6rem",
+          "space-xl": "2rem",
+          "space-sm": "0.75rem",
+          "space-lg": "1.5rem",
+          "space-2xs": "0.25rem",
+          "space-md": "1rem",
+          "gutter-mobile": "1rem",
+          "gutter-desktop": "2rem",
+          "space-3xl": "4.5rem"
+        },
+        fontFamily: {
+          "label-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "body-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "headline-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "label-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "body-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "headline-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "headline-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "body-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "display-xl": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "display-xl-mobile": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "label-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "display-hero": ["IBM Plex Sans", "IBM Plex Sans Arabic"]
+        },
+        fontSize: {
+          "label-md": ["12px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+          "body-lg": ["18px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "300" }],
+          "headline-sm": ["22px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" }],
+          "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+          "display-xl": ["56px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "300" }],
+          "body-sm": ["13px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+          "display-xl-mobile": ["38px", { "lineHeight": "50px", "letterSpacing": "-0.01em", "fontWeight": "300" }],
+          "headline-lg": ["40px", { "lineHeight": "54px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+          "headline-md": ["28px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "500" }],
+          "body-md": ["15px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "headline-lg-mobile": ["28px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+          "display-hero": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "500" }]
+        }
       }
     }
   }
-}
 </script>
 
 </body>
