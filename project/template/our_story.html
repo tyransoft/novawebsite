@@ -328,58 +328,84 @@ h1, h2, h3, h4 { font-weight: 500; }
 
 </main>
 
-<footer class="w-full bg-gradient-to-b from-surface-container-low to-[#f3e8ff] pt-12 pb-6 shadow-[0_-4px_24px_-4px_rgba(107,53,147,0.03)]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
-      <div class="lg:col-span-2 flex flex-col gap-4">
-        <div class="flex items-center gap-2">
-          <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-on-primary text-xl">child_care</span>
+<footer class="w-full bg-gradient-to-b from-surface-container-low to-[#f3e8ff] pt-12 sm:pt-space-4xl pb-6 sm:pb-space-2xl shadow-[0_-4px_24px_-4px_rgba(107,53,147,0.03)]">
+  <div class="max-w-container-max mx-auto px-gutter-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-2xl mb-space-3xl">
+        <div class="lg:col-span-2 flex flex-col gap-space-md">
+          <div class="flex items-center gap-space-xs">
+            <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-on-primary text-xl">child_care</span>
+            </div>
+            <span class="font-headline-sm text-headline-sm text-primary">NOVA • شركة نوڤا</span>
           </div>
-          <span class="text-lg font-bold text-primary">NOVA • شركة نوڤا</span>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md leading-relaxed">الشركة الوطنية الرائدة في حفاضات الأطفال والمناديل المبللة ومستلزمات العناية الصحية للأمهات والرضع في ليبيا. نبتكر بعناية فائقة وتكنولوجيا أوروبية لضمان راحة وسلامة بشرة طفلك في كل لحظة.</p>
+          <div class="flex items-center gap-space-xs mt-space-xs">
+            <span class="inline-flex items-center gap-space-2xs bg-surface-container-low text-secondary font-label-sm text-label-sm px-space-md py-space-xs rounded-full">
+              <span class="material-symbols-outlined text-sm">eco</span>خالٍ من الكحول والعطور الضارة
+            </span>
+            <span class="inline-flex items-center gap-space-2xs bg-surface-container-low text-primary font-label-sm text-label-sm px-space-md py-space-xs rounded-full">
+              <span class="material-symbols-outlined text-sm">health_and_safety</span>مفحوص جلدياً pH 5.5
+            </span>
+          </div>
         </div>
-        <p class="text-sm text-on-surface-variant max-w-md leading-relaxed">
-          الشركة الوطنية الرائدة في تصنيع حفاضات الأطفال والمناديل المبللة في ليبيا، تابعة لشركة باب دجلة.
-        </p>
-      </div>
-      <div class="flex flex-col gap-3">
-        <h4 class="text-base font-bold text-on-surface">المنتجات</h4>
-        <ul class="flex flex-col gap-2 text-sm text-on-surface-variant">
-          <li><a class="hover:text-primary transition-colors" href="{% url 'products_baby_diapers' %}">حفاضات الأطفال</a></li>
-          <li><a class="hover:text-primary transition-colors" href="{% url 'products_wipes' %}">مناديل الرضع</a></li>
-          <li><a class="hover:text-primary transition-colors" href="{% url 'products_personal_care' %}">عناية بالمرأة والوجه</a></li>
-        </ul>
-      </div>
-      <div class="flex flex-col gap-3">
-        <h4 class="text-base font-bold text-on-surface">روابط سريعة</h4>
-        <ul class="flex flex-col gap-2 text-sm text-on-surface-variant">
-          <li><a class="hover:text-primary transition-colors" href="{% url 'about' %}">من نحن</a></li>
-          <li><a class="hover:text-primary transition-colors" href="{% url 'ourstory' %}">قصتنا</a></li>
-          <li><a class="hover:text-primary transition-colors" href="{% url 'quality' %}">الجودة والتصنيع</a></li>
-        </ul>
-      </div>
-      <div class="flex flex-col gap-3">
-        <h4 class="text-base font-bold text-on-surface">التواصل</h4>
-        <div class="flex flex-col gap-2 text-sm text-on-surface-variant">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-secondary text-lg">call</span>
-            <span dir="ltr">+218 (21) 489-0123</span>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs text-lg">مجموعات المنتجات</h4>
+          <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+            <li><a class="hover:text-primary transition-colors flex items-center gap-space-2xs" data-path="products" href="{% url 'products_baby_diapers' %}"><span class="material-symbols-outlined text-sm text-secondary-container">check_circle</span>حفاضات الأطفال Nova Diapers</a></li>
+            <li><a class="hover:text-primary transition-colors flex items-center gap-space-2xs" data-path="products" href="{% url 'products_wipes' %}"><span class="material-symbols-outlined text-sm text-secondary-container">check_circle</span>مناديل مبللة Nova Wipes</a></li>
+            <li><a class="hover:text-primary transition-colors flex items-center gap-space-2xs" data-path="products" href="{% url 'products_personal_care' %}"><span class="material-symbols-outlined text-sm text-secondary-container">check_circle</span>مستلزمات العناية بالأم</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs text-lg">روابط سريعة</h4>
+          <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+            <li><a class="hover:text-primary transition-colors" data-path="about-us" href="{% url 'about' %}">عن نوڤا</a></li>
+            <li><a class="hover:text-primary transition-colors" data-path="quality-and-manufacturing" href="{% url 'quality' %}">الجودة</a></li>
+            <li><a class="hover:text-primary transition-colors" data-path="why-us" href="{% url 'why_us' %}">لماذا نوڤا؟</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs text-lg">التواصل والمبيعات</h4>
+          <div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+            <div class="flex items-start gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-lg mt-0.5">location_on</span>
+              <span>بنغازي - طريق طرابلس - بالقرب من بوابة الويفية الالكترونية</span>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-lg">call</span>
+              <span dir="ltr">+218 (21) 489-0123</span>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-lg">mail</span>
+              <span>nova.company.ly26@gmail.com</span>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-lg">chat</span>
+              <span>خدمة العملاء عبر واتساب: 218910000000+</span>
+            </div>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-secondary text-lg">chat</span>
-            <span>واتساب: 218910000000+</span>
-          </div>
+        </div>
+      </div>
+
+      <div class="pt-space-lg border-t border-outline-variant/30 pb-space-lg mb-space-lg">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-space-md bg-surface-container-low/50 rounded-2xl p-space-lg">
+          <span class="font-label-md text-label-md text-on-surface-variant">علامة تابعة لـ</span>
+            <img src="{% static 'bablogo.png' %}" alt="شركة باب دجلة" class="h-12 w-auto object-contain"/>
+            <div class="flex flex-col text-right">
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">شركة باب دجلة</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">الشركة الأم</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-label-sm text-label-sm text-on-surface-variant border-t border-outline-variant/30">
+        <div class="flex items-center gap-space-xs">
+          <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+          <span>جميع الحقوق محفوظة © 2026 تحت إشراف شركة باب دجلة. صنع بفخر في ليبيا.</span>
         </div>
       </div>
     </div>
-    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-on-surface-variant border-t border-outline-variant/30">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
-        <span>جميع الحقوق محفوظة © 2026 شركة نوڤا - تابعة لشركة باب دجلة. صنع بفخر في ليبيا.</span>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 <script>
 const btn = document.getElementById('mobile-menu-btn');
