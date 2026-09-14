@@ -26,14 +26,14 @@ SECRET_KEY = 'django-insecure-dhj3bqxijcurx^mkc)2*=cg^a0et(m56ym^w0!le(sxts(oof3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['novababy.tip2.libyanspider.cloud']
+ALLOWED_HOSTS = ['novababy.ly']
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://novababy.tip2.libyanspider.cloud",
+    "https://novababy.ly",
 
 ]
 
-SITE_URL = "https://novababy.tip2.libyanspider.cloud"
+SITE_URL = "https://novababy.ly"
 
 
 
