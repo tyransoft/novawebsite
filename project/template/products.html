@@ -158,8 +158,13 @@ h1, h2, h3, h4 { font-weight: 500; }
         </a>
         <a href="{% url 'products_wipes' %}" class="inline-flex items-center gap-2 bg-surface-container-lowest text-primary text-sm font-semibold px-6 py-3 rounded-full shadow-sm hover:bg-surface-container transition-all">
           <span class="material-symbols-outlined text-secondary">water_drop</span>
-          <span>تصفحي المناديل</span>
+          <span>تصفحي مناديل الاطفال</span>
         </a>
+                <a href="{% url 'products_personal_care' %}" class="inline-flex items-center gap-2 bg-surface-container-lowest text-primary text-sm font-semibold px-6 py-3 rounded-full shadow-sm hover:bg-surface-container transition-all">
+          <span class="material-symbols-outlined text-secondary">water_drop</span>
+          <span>تصفحي مناديل الوجه واليدين</span>
+        </a>
+
       </div>
     </div>
   </div>
@@ -227,13 +232,15 @@ h1, h2, h3, h4 { font-weight: 500; }
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
 
       <article class="product-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] overflow-hidden group">
+                <a href="{% url 'products_baby_diapers' %}">
+
         <div class="relative bg-gradient-to-b from-primary-fixed/40 to-surface-container-lowest p-6 flex items-center justify-center min-h-[220px]">
           <div class="absolute top-3 right-3 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded-full shadow-sm">مقاس 1</div>
           <div class="absolute top-3 left-3 bg-surface-container text-primary text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
             <span class="material-symbols-outlined text-xs">child_care</span>
             حديثي الولادة
           </div>
-          <img alt="حفاضات نوڤا مقاس 1" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4JnEcwtZdglmhT-f54B5835zNyFy0_FmUmBQ-uiVVyBsU2_MjfeA3ZbC7VeOx25PxPvDn7Gb6WDL3mHa4sy1MMGRHIsnXgNeEusi918jrAA8jT1nFHJLIHwN_ljwQT5gSFH11R2bIq0nISwZFXd7JSFnWjqW28_Y5vl5nqYib5x1Fg8nbu5-tJERau9Invki8FCZz3Yyf8qfyceZfUiRU5jU_1hI09Y3y7jIcZEYXCUuS_Mk4LpvfejPus-Tq1yO4uM"/>
+          <img alt="حفاضات نوڤا مقاس 1" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="{% static 'pamb1.jpeg' %}"/>
         </div>
         <div class="p-4 flex flex-col flex-grow justify-between gap-3">
           <div class="flex flex-col gap-1">
@@ -243,90 +250,103 @@ h1, h2, h3, h4 { font-weight: 500; }
             </span>
             <h3 class="text-base font-bold text-on-surface">حفاضات نوڤا - مقاس 1</h3>
           </div>
-          <a href="#" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
+          <a href="https://wa.me/218910000000?text=استفسار عن حفاضات نوڤا مقاس 1" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
             <span>التفاصيل والطلب</span>
           </a>
         </div>
+        </a>
       </article>
 
       <article class="product-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] overflow-hidden group">
+              <a href="{% url 'products_baby_diapers' %}">
+
         <div class="relative bg-gradient-to-b from-primary-fixed/40 to-surface-container-lowest p-6 flex items-center justify-center min-h-[220px]">
           <div class="absolute top-3 right-3 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded-full shadow-sm">مقاس 2</div>
           <div class="absolute top-3 left-3 bg-surface-container text-primary text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
             <span class="material-symbols-outlined text-xs">child_care</span>
             الرضع
           </div>
-          <img alt="حفاضات نوڤا مقاس 2" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4JnEcwtZdglmhT-f54B5835zNyFy0_FmUmBQ-uiVVyBsU2_MjfeA3ZbC7VeOx25PxPvDn7Gb6WDL3mHa4sy1MMGRHIsnXgNeEusi918jrAA8jT1nFHJLIHwN_ljwQT5gSFH11R2bIq0nISwZFXd7JSFnWjqW28_Y5vl5nqYib5x1Fg8nbu5-tJERau9Invki8FCZz3Yyf8qfyceZfUiRU5jU_1hI09Y3y7jIcZEYXCUuS_Mk4LpvfejPus-Tq1yO4uM"/>
+          <img alt="حفاضات نوڤا مقاس 2" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="{% static 'pamb2.jpeg' %}"/>
         </div>
         <div class="p-4 flex flex-col flex-grow justify-between gap-3">
           <div class="flex flex-col gap-1">
             <span class="text-xs font-semibold text-secondary flex items-center gap-1">
               <span class="material-symbols-outlined text-sm">straighten</span>
-              4-8 كجم
+              3-6 كجم
             </span>
             <h3 class="text-base font-bold text-on-surface">حفاضات نوڤا - مقاس 2</h3>
           </div>
-          <a href="#" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
+          <a href="https://wa.me/218910000000?text=استفسار عن حفاضات نوڤا مقاس 2" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
             <span>التفاصيل والطلب</span>
           </a>
         </div>
+        </a>
       </article>
 
       <article class="product-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] overflow-hidden group">
+                <a href="{% url 'products_baby_diapers' %}">
+
         <div class="relative bg-gradient-to-b from-secondary-fixed/40 to-surface-container-lowest p-6 flex items-center justify-center min-h-[220px]">
           <div class="absolute top-3 right-3 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded-full shadow-sm">مقاس 3</div>
           <div class="absolute top-3 left-3 bg-surface-container text-primary text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
             <span class="material-symbols-outlined text-xs">verified</span>
             الأكثر مبيعاً
           </div>
-          <img alt="حفاضات نوڤا مقاس 3" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4JnEcwtZdglmhT-f54B5835zNyFy0_FmUmBQ-uiVVyBsU2_MjfeA3ZbC7VeOx25PxPvDn7Gb6WDL3mHa4sy1MMGRHIsnXgNeEusi918jrAA8jT1nFHJLIHwN_ljwQT5gSFH11R2bIq0nISwZFXd7JSFnWjqW28_Y5vl5nqYib5x1Fg8nbu5-tJERau9Invki8FCZz3Yyf8qfyceZfUiRU5jU_1hI09Y3y7jIcZEYXCUuS_Mk4LpvfejPus-Tq1yO4uM"/>
+          <img alt="حفاضات نوڤا مقاس 3" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="{% static 'pamb3.jpeg' %}"/>
         </div>
         <div class="p-4 flex flex-col flex-grow justify-between gap-3">
           <div class="flex flex-col gap-1">
             <span class="text-xs font-semibold text-secondary flex items-center gap-1">
               <span class="material-symbols-outlined text-sm">straighten</span>
-              7-12 كجم
+              4-9 كجم
             </span>
             <h3 class="text-base font-bold text-on-surface">حفاضات نوڤا - مقاس 3</h3>
           </div>
-          <a href="#" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
+          <a href="https://wa.me/218910000000?text=استفسار عن حفاضات نوڤا مقاس 3" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
             <span>التفاصيل والطلب</span>
           </a>
         </div>
+        </a>
       </article>
 
       <article class="product-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] overflow-hidden group">
+               <a href="{% url 'products_baby_diapers' %}">
+
         <div class="relative bg-gradient-to-b from-primary-fixed/40 to-surface-container-lowest p-6 flex items-center justify-center min-h-[220px]">
           <div class="absolute top-3 right-3 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded-full shadow-sm">مقاس 4</div>
           <div class="absolute top-3 left-3 bg-surface-container text-primary text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
             <span class="material-symbols-outlined text-xs">directions_walk</span>
             الحبو
           </div>
-          <img alt="حفاضات نوڤا مقاس 4" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4JnEcwtZdglmhT-f54B5835zNyFy0_FmUmBQ-uiVVyBsU2_MjfeA3ZbC7VeOx25PxPvDn7Gb6WDL3mHa4sy1MMGRHIsnXgNeEusi918jrAA8jT1nFHJLIHwN_ljwQT5gSFH11R2bIq0nISwZFXd7JSFnWjqW28_Y5vl5nqYib5x1Fg8nbu5-tJERau9Invki8FCZz3Yyf8qfyceZfUiRU5jU_1hI09Y3y7jIcZEYXCUuS_Mk4LpvfejPus-Tq1yO4uM"/>
+          <img alt="حفاضات نوڤا مقاس 4" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="{% static 'pamb4.jpeg' %}"/>
         </div>
         <div class="p-4 flex flex-col flex-grow justify-between gap-3">
           <div class="flex flex-col gap-1">
             <span class="text-xs font-semibold text-secondary flex items-center gap-1">
               <span class="material-symbols-outlined text-sm">straighten</span>
-              10-16 كجم
+              8-13 كجم
             </span>
             <h3 class="text-base font-bold text-on-surface">حفاضات نوڤا - مقاس 4</h3>
           </div>
-          <a href="#" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
+          <a href="https://wa.me/218910000000?text=استفسار عن حفاضات نوڤا مقاس 4" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
             <span>التفاصيل والطلب</span>
           </a>
         </div>
+</a>
+
       </article>
 
       <article class="product-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] overflow-hidden group">
+             <a href="{% url 'products_baby_diapers' %}">
+
         <div class="relative bg-gradient-to-b from-secondary-fixed/40 to-surface-container-lowest p-6 flex items-center justify-center min-h-[220px]">
           <div class="absolute top-3 right-3 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded-full shadow-sm">مقاس 5</div>
           <div class="absolute top-3 left-3 bg-surface-container text-primary text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
             <span class="material-symbols-outlined text-xs">star</span>
             مميز
           </div>
-          <img alt="حفاضات نوڤا مقاس 5" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4JnEcwtZdglmhT-f54B5835zNyFy0_FmUmBQ-uiVVyBsU2_MjfeA3ZbC7VeOx25PxPvDn7Gb6WDL3mHa4sy1MMGRHIsnXgNeEusi918jrAA8jT1nFHJLIHwN_ljwQT5gSFH11R2bIq0nISwZFXd7JSFnWjqW28_Y5vl5nqYib5x1Fg8nbu5-tJERau9Invki8FCZz3Yyf8qfyceZfUiRU5jU_1hI09Y3y7jIcZEYXCUuS_Mk4LpvfejPus-Tq1yO4uM"/>
-        </div>
+          <img alt="حفاضات نوڤا مقاس 5" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="{% static 'pamb5.jpeg' %}"/>
+        </div> 
         <div class="p-4 flex flex-col flex-grow justify-between gap-3">
           <div class="flex flex-col gap-1">
             <span class="text-xs font-semibold text-secondary flex items-center gap-1">
@@ -335,58 +355,178 @@ h1, h2, h3, h4 { font-weight: 500; }
             </span>
             <h3 class="text-base font-bold text-on-surface">حفاضات نوڤا - مقاس 5</h3>
           </div>
-          <a href="#" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
+          <a href="https://wa.me/218910000000?text=استفسار عن حفاضات نوڤا مقاس 5" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
             <span>التفاصيل والطلب</span>
           </a>
         </div>
+        </a>
       </article>
 
       <article class="product-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] overflow-hidden group">
+              <a href="{% url 'products_baby_diapers' %}">
+ 
         <div class="relative bg-gradient-to-b from-primary-fixed/40 to-surface-container-lowest p-6 flex items-center justify-center min-h-[220px]">
           <div class="absolute top-3 right-3 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded-full shadow-sm">مقاس 6</div>
           <div class="absolute top-3 left-3 bg-surface-container text-primary text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
             <span class="material-symbols-outlined text-xs">child_friendly</span>
             المشي
           </div>
-          <img alt="حفاضات نوڤا مقاس 6" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4JnEcwtZdglmhT-f54B5835zNyFy0_FmUmBQ-uiVVyBsU2_MjfeA3ZbC7VeOx25PxPvDn7Gb6WDL3mHa4sy1MMGRHIsnXgNeEusi918jrAA8jT1nFHJLIHwN_ljwQT5gSFH11R2bIq0nISwZFXd7JSFnWjqW28_Y5vl5nqYib5x1Fg8nbu5-tJERau9Invki8FCZz3Yyf8qfyceZfUiRU5jU_1hI09Y3y7jIcZEYXCUuS_Mk4LpvfejPus-Tq1yO4uM"/>
+          <img alt="حفاضات نوڤا مقاس 6" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="{% static 'pamb6.jpeg' %}"/>
         </div>
         <div class="p-4 flex flex-col flex-grow justify-between gap-3">
           <div class="flex flex-col gap-1">
             <span class="text-xs font-semibold text-secondary flex items-center gap-1">
               <span class="material-symbols-outlined text-sm">straighten</span>
-              13-20 كجم
+              13-18 كجم
             </span>
             <h3 class="text-base font-bold text-on-surface">حفاضات نوڤا - مقاس 6</h3>
           </div>
-          <a href="#" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
+          <a href="https://wa.me/218910000000?text=استفسار عن حفاضات نوڤا مقاس 6" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
             <span>التفاصيل والطلب</span>
           </a>
         </div>
+        </a>
       </article>
 
       <article class="product-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] overflow-hidden group">
+        <a href="{% url 'products_baby_diapers' %}">
         <div class="relative bg-gradient-to-b from-secondary-fixed/40 to-surface-container-lowest p-6 flex items-center justify-center min-h-[220px]">
           <div class="absolute top-3 right-3 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded-full shadow-sm">مقاس 7</div>
           <div class="absolute top-3 left-3 bg-surface-container text-primary text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
             <span class="material-symbols-outlined text-xs">school</span>
             الأطفال الكبار
           </div>
-          <img alt="حفاضات نوڤا مقاس 7" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4JnEcwtZdglmhT-f54B5835zNyFy0_FmUmBQ-uiVVyBsU2_MjfeA3ZbC7VeOx25PxPvDn7Gb6WDL3mHa4sy1MMGRHIsnXgNeEusi918jrAA8jT1nFHJLIHwN_ljwQT5gSFH11R2bIq0nISwZFXd7JSFnWjqW28_Y5vl5nqYib5x1Fg8nbu5-tJERau9Invki8FCZz3Yyf8qfyceZfUiRU5jU_1hI09Y3y7jIcZEYXCUuS_Mk4LpvfejPus-Tq1yO4uM"/>
+          <img alt="حفاضات نوڤا مقاس 7" class="h-40 object-contain transition-transform duration-500 group-hover:scale-105" src="{% static 'pamb7.jpeg' %}"/>
         </div>
         <div class="p-4 flex flex-col flex-grow justify-between gap-3">
           <div class="flex flex-col gap-1">
             <span class="text-xs font-semibold text-secondary flex items-center gap-1">
               <span class="material-symbols-outlined text-sm">straighten</span>
-              16 كجم فأكثر
+             20-15 كجم 
             </span>
             <h3 class="text-base font-bold text-on-surface">حفاضات نوڤا - مقاس 7</h3>
           </div>
-          <a href="#" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
+          <a href="https://wa.me/218910000000?text=استفسار عن حفاضات نوڤا مقاس 7" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-xs font-semibold py-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
             <span>التفاصيل والطلب</span>
+          </a>
+        </div>
+        </a>
+      </article>
+
+      <article class="product-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] overflow-hidden group">
+        <div class="relative bg-gradient-to-b from-secondary-fixed/40 to-surface-container-lowest p-6 flex items-center justify-center min-h-[240px]">
+          <div class="absolute top-3 right-3 bg-secondary text-on-secondary text-xs font-semibold px-3 py-1 rounded-full shadow-sm">72 منديل</div>
+          <div class="absolute top-3 left-3 bg-surface-container text-secondary text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
+            <span class="material-symbols-outlined text-xs">favorite</span>
+            للأطفال
+          </div>
+          <img alt="مناديل نوڤا للأطفال" class="h-44 object-contain transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtnzsVt_GX7nfAuET2v5vZkp1K1gLRtgdr5_JcP5C6KV-ejzaDdD3vq5FdbQSetKve84aJk8XNeLrgQz7KPcqoBJFOHUVUyhPQmUgRuNL4uJ-6Dx_mCl3DOOaOCEA0qaYBnDdzudBXUHOVr4kfn57LqxA8QurRk-iJgnMNugzIBpmTDgw2R5KFemkMVQ7umUIaX7yyXtYk62aHTvVzsqyNnVvw8jpgvrSkaD-MvwGtn3W9F5u6r8S8cQKVg3m7VqpmptU"/>
+        </div>
+        <div class="p-5 flex flex-col flex-grow justify-between gap-4">
+          <div class="flex flex-col gap-2">
+            <span class="text-xs font-semibold text-secondary flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">child_care</span>
+              الراحة والأمان للأطفال
+            </span>
+            <h3 class="text-lg font-bold text-on-surface">مناديل نوڤا للبشرة الحساسة</h3>
+            <p class="text-sm text-on-surface-variant line-clamp-2">خالية تماماً من الكحول والعطور، بماء نقي pH 5.5 للعناية اليومية بالرضع.</p>
+          </div>
+          <div class="flex flex-wrap gap-1">
+            <span class="bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-2 py-0.5 rounded-full">0% كحول</span>
+            <span class="bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold px-2 py-0.5 rounded-full">مختبرة جلدياً</span>
+          </div>
+          <a href="https://wa.me/218910000000?text=استفسار عن مناديل نوڤا للبشرة الحساسة" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-sm font-semibold py-2.5 rounded-full hover:bg-secondary hover:text-on-secondary transition-all">
+            <span>الطلب والاستفسار</span>
+            <span class="material-symbols-outlined text-sm">chat</span>
+          </a>
+        </div>
+      </article>
+      
+      <article class="product-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] overflow-hidden group">
+        <div class="relative bg-gradient-to-b from-primary-fixed/40 to-surface-container-lowest p-6 flex items-center justify-center min-h-[240px]">
+          <div class="absolute top-3 right-3 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded-full shadow-sm">72 منديل</div>
+          <div class="absolute top-3 left-3 bg-surface-container text-primary text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
+            <span class="material-symbols-outlined text-xs">face_retouching_natural</span>
+            مزيل مكياج
+          </div>
+          <img alt="مناديل نوڤا للوجه والمكياج" class="h-44 object-contain transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcnYPd755eUkiwq0nwwf5ner18_oBZPPP4qL2kqGFwWXJnZEp1HJlHnRPR7xKgQuaffWJM_HVoN0plq9F11_I2VFbGeRu8IMIiIMyg7TJQ45Kz-6X9tUMggTwZEw3cXo8znkiKkt2xqv_4ijaw_0e9PgAIClODZRsuiRhACc94bMkVlYsWqJiIZbM5a20Grrurr77ovnE-RZSo9CxbOsa7CL8a5H3PNA6o5F1Lyu598GlmWtRPYpCfcEYnHLs_viuPJkQ"/>
+        </div>
+        <div class="p-5 flex flex-col flex-grow justify-between gap-4">
+          <div class="flex flex-col gap-2">
+            <span class="text-xs font-semibold text-primary flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">spa</span>
+              مزيل مكياج فوري
+            </span>
+            <h3 class="text-lg font-bold text-on-surface">مناديل نوڤا للوجه والمكياج</h3>
+            <p class="text-sm text-on-surface-variant line-clamp-2">بماء ميسيلار نقي، تزيل المكياج المقاوم للماء بلمسة واحدة دون فرك.</p>
+          </div>
+          <div class="flex flex-wrap gap-1">
+            <span class="bg-primary-fixed text-on-primary-fixed text-xs font-semibold px-2 py-0.5 rounded-full">ماء ميسيلار</span>
+            <span class="bg-primary-fixed text-on-primary-fixed text-xs font-semibold px-2 py-0.5 rounded-full">نعومة فائقة</span>
+          </div>
+          <a href="https://wa.me/218910000000?text=استفسار عن مناديل نوڤا للوجه" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-sm font-semibold py-2.5 rounded-full hover:bg-primary hover:text-on-primary transition-all">
+            <span>الطلب والاستفسار</span>
+            <span class="material-symbols-outlined text-sm">chat</span>
           </a>
         </div>
       </article>
 
+      <article class="product-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] overflow-hidden group">
+        <div class="relative bg-gradient-to-b from-surface-variant/40 to-surface-container-lowest p-6 flex items-center justify-center min-h-[240px]">
+          <div class="absolute top-3 right-3 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded-full shadow-sm">72 منديل</div>
+          <div class="absolute top-3 left-3 bg-surface-container text-on-surface-variant text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
+            <span class="material-symbols-outlined text-xs">clean_hands</span>
+            لليدين
+          </div>
+          <img alt="مناديل نوڤا لليدين" class="h-44 object-contain transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsobHRgPTIxVLKMbWVhCblTSzYR2Fs_xm9MI0wh44DiwQiGfPRlNKMWYPcbRntoUD2FSlMIBcyTGoJ_HFS5bTD245HFjo_yrOfgSbvYLRnh7LH5VYnUA5-w8r6Scv9-Q5FtqkT7nPIVaaHjhqNct0yZfcIK3RV6cEGTjC-aaLDkp-ta1qXzfgwe19jtXMHoTnymISeA0lLGixTRzDN__x2JBaky9fLx1Aucx6O8BpKyDGUCjBQvzZ3NT-lykgYAA3d9ak"/>
+        </div>
+        <div class="p-5 flex flex-col flex-grow justify-between gap-4">
+          <div class="flex flex-col gap-2">
+            <span class="text-xs font-semibold text-on-surface-variant flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">clean_hands</span>
+              نقاء القطن الطبيعي
+            </span>
+            <h3 class="text-lg font-bold text-on-surface">مناديل نوڤا لليدين والعناية اليومية</h3>
+            <p class="text-sm text-on-surface-variant line-clamp-2">مثالية للسيارة والمكتب ونظافة العائلة الفورية في كل مكان.</p>
+          </div>
+          <div class="flex flex-wrap gap-1">
+            <span class="bg-surface-container-highest text-on-surface-variant text-xs font-semibold px-2 py-0.5 rounded-full">قطن نقي</span>
+            <span class="bg-surface-container-highest text-on-surface-variant text-xs font-semibold px-2 py-0.5 rounded-full">انتعاش دائم</span>
+          </div>
+          <a href="https://wa.me/218910000000?text=استفسار عن مناديل نوڤا لليدين" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-sm font-semibold py-2.5 rounded-full hover:bg-primary hover:text-on-primary transition-all">
+            <span>الطلب والاستفسار</span>
+            <span class="material-symbols-outlined text-sm">chat</span>
+          </a>
+        </div>
+      </article>
+            <article class="product-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_-2px_rgba(107,53,147,0.06)] overflow-hidden group">
+        <div class="relative bg-gradient-to-b from-surface-variant/40 to-surface-container-lowest p-6 flex items-center justify-center min-h-[240px]">
+          <div class="absolute top-3 right-3 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded-full shadow-sm">16 منديل</div>
+          <div class="absolute top-3 left-3 bg-surface-container text-on-surface-variant text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
+            <span class="material-symbols-outlined text-xs">clean_hands</span>
+            لليدين
+          </div>
+          <img alt="مناديل نوڤا لليدين" class="h-44 object-contain transition-transform duration-500 group-hover:scale-105" src="{% static 'wipes16.jpeg' %}"/>
+        </div>
+        <div class="p-5 flex flex-col flex-grow justify-between gap-4">
+          <div class="flex flex-col gap-2">
+            <span class="text-xs font-semibold text-on-surface-variant flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">clean_hands</span>
+              نقاء القطن الطبيعي
+            </span>
+            <h3 class="text-lg font-bold text-on-surface">مناديل نوڤا لليدين والعناية اليومية</h3>
+            <p class="text-sm text-on-surface-variant line-clamp-2"> الحجم الصغير المناسب ليكون رفيقك المنعش .</p>
+          </div>
+          <div class="flex flex-wrap gap-1">
+            <span class="bg-surface-container-highest text-on-surface-variant text-xs font-semibold px-2 py-0.5 rounded-full">قطن نقي</span>
+            <span class="bg-surface-container-highest text-on-surface-variant text-xs font-semibold px-2 py-0.5 rounded-full">انتعاش دائم</span>
+          </div>
+          <a href="https://wa.me/218910000000?text=استفسار عن مناديل نوڤا لليدين" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-surface-container text-primary text-sm font-semibold py-2.5 rounded-full hover:bg-primary hover:text-on-primary transition-all">
+            <span>الطلب والاستفسار</span>
+            <span class="material-symbols-outlined text-sm">chat</span>
+          </a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
