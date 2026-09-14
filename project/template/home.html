@@ -612,53 +612,53 @@ h3, h4 {
               </div>
             </div>
             <div class="lg:col-span-6">
-              <div class="bg-surface-container-lowest text-on-surface p-space-2xl rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.2)]">
-                <div class="flex flex-col gap-space-2xs mb-space-lg text-right">
-                  <h3 class="font-headline-sm text-headline-sm text-primary font-bold">طلب توريد</h3>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">املأ النموذج وسيتصل بك مدير المبيعات  خلال 24 ساعة عمل.</p>
-                </div>
-                <form class="flex flex-col gap-space-md text-right" onsubmit="event.preventDefault(); alert('شكراً لاهتمامكم نوڤا. سيقوم فريق المبيعات بالتواصل معكم قريباً.');">
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                    <div class="flex flex-col gap-space-2xs">
-                      <label class="font-label-sm text-label-sm font-bold text-on-surface">اسم النشاط التجاري / الصيدلية *</label>
-                      <input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary" placeholder="مثال: صيدلية النقاء الحديثة" required="" type="text" />
-                    </div>
-                    <div class="flex flex-col gap-space-2xs">
-                      <label class="font-label-sm text-label-sm font-bold text-on-surface">اسم المسؤول ورقم الهاتف *</label>
-                      <input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary text-right" dir="ltr" placeholder="091XXXXXXX" required="" type="tel" />
-                    </div>
-                  </div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                    <div class="flex flex-col gap-space-2xs">
-                      <label class="font-label-sm text-label-sm font-bold text-on-surface">المدينة *</label>
-                      <select class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary text-on-surface">
-                        <option>طرابلس الكبرى</option>
-                        <option>بنغازي</option>
-                        <option>مصراتة</option>
-                        <option>الزاوية</option>
-                        <option>سبها والجنوب</option>
-                        <option>البيضاء / طبرق</option>
-                        <option>زليتن</option>              
-                        <option>مدينة أخرى</option>
-                      </select>
-                    </div>
-                    <div class="flex flex-col gap-space-2xs">
-                      <label class="font-label-sm text-label-sm font-bold text-on-surface">نوع النشاط</label>
-                      <select class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary text-on-surface">
-                        <option>موزع جملة ومورد رئيسي</option>
-                        <option>صيدلية</option>
-                        <option>سوبرماركت</option>
-                      </select>
-                    </div>
-                  </div>
-                  
-                  <button class="w-full mt-space-xs bg-primary text-on-primary font-label-lg text-label-lg py-space-md rounded-full shadow-[0_8px_20px_rgba(82,26,122,0.3)] hover:bg-primary-container transition-all flex items-center justify-center gap-space-xs" type="submit">
-                    <span>إرسال طلب التوريد التجاري</span>
-                    <span class="material-symbols-outlined text-lg">send</span>
-                  </button>
-                </form>
-              </div>
-            </div>
+  <div class="bg-surface-container-lowest text-on-surface p-space-2xl rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.2)]">
+    <div class="flex flex-col gap-space-2xs mb-space-lg text-right">
+      <h3 class="font-headline-sm text-headline-sm text-primary font-bold">طلب توريد</h3>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">املأ النموذج وسيتصل بك مدير المبيعات خلال 24 ساعة عمل.</p>
+    </div>
+    <form class="flex flex-col gap-space-md text-right" id="supply-form" onsubmit="sendSupplyToWhatsApp(event)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+        <div class="flex flex-col gap-space-2xs">
+          <label class="font-label-sm text-label-sm font-bold text-on-surface">اسم النشاط التجاري / الصيدلية *</label>
+          <input id="supply-business" class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary" placeholder="مثال: صيدلية النقاء الحديثة" required type="text"/>
+        </div>
+        <div class="flex flex-col gap-space-2xs">
+          <label class="font-label-sm text-label-sm font-bold text-on-surface">اسم المسؤول ورقم الهاتف *</label>
+          <input id="supply-phone" class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary text-right" dir="ltr" placeholder="091XXXXXXX" required type="tel"/>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+        <div class="flex flex-col gap-space-2xs">
+          <label class="font-label-sm text-label-sm font-bold text-on-surface">المدينة *</label>
+          <select id="supply-city" class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary text-on-surface">
+            <option>طرابلس الكبرى</option>
+            <option>بنغازي</option>
+            <option>مصراتة</option>
+            <option>الزاوية</option>
+            <option>سبها والجنوب</option>
+            <option>البيضاء / طبرق</option>
+            <option>زليتن</option>
+            <option>مدينة أخرى</option>
+          </select>
+        </div>
+        <div class="flex flex-col gap-space-2xs">
+          <label class="font-label-sm text-label-sm font-bold text-on-surface">نوع النشاط</label>
+          <select id="supply-type" class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary text-on-surface">
+            <option>موزع جملة ومورد رئيسي</option>
+            <option>صيدلية</option>
+            <option>سوبرماركت</option>
+          </select>
+        </div>
+      </div>
+      
+      <button class="w-full mt-space-xs bg-primary text-on-primary font-label-lg text-label-lg py-space-md rounded-full shadow-[0_8px_20px_rgba(82,26,122,0.3)] hover:bg-primary-container transition-all flex items-center justify-center gap-space-xs" type="submit">
+        <span>إرسال طلب التوريد التجاري</span>
+        <span class="material-symbols-outlined text-lg">send</span>
+      </button>
+    </form>
+  </div>
+</div>
           </div>
         </div>
       </section>
@@ -726,7 +726,7 @@ h3, h4 {
       <div class="pt-space-lg border-t border-outline-variant/30 pb-space-lg mb-space-lg">
         <div class="flex flex-col sm:flex-row items-center justify-center gap-space-md bg-surface-container-low/50 rounded-2xl p-space-lg">
           <span class="font-label-md text-label-md text-on-surface-variant">علامة تابعة لـ</span>
-            <img src="{% static 'bablogo.jpeg' %}" alt="شركة باب دجلة" class="h-12 w-auto object-contain"/>
+            <img src="{% static 'bablogo.png' %}" alt="شركة باب دجلة" class="h-12 w-auto object-contain"/>
             <div class="flex flex-col text-right">
               <span class="font-headline-sm text-headline-sm text-primary font-bold">شركة باب دجلة</span>
               <span class="font-label-sm text-label-sm text-on-surface-variant">الشركة الأم</span>
