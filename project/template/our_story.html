@@ -5,15 +5,31 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
 <title>قصتنا | نوڤا - رحلة كفاح من الفكرة إلى الريادة</title>
-<meta name="description" content="قصة كفاح علامة نوڤا الليبية، من فكرة طموحة إلى علامة تجارية موثوقة، بجهود فريق ليبي مخلص وشراكات استراتيجية."/>
-<meta name="keywords" content="قصة نوڤا, Nova story, كفاح, شركة ليبية, صناعة ليبية"/>
+<meta name="description" content="قصة كفاح علامة نوڤا الليبية، من فكرة طموحة إلى علامة تجارية موثوقة، بجهود فريق ليبي مخلص وشراكات استراتيجية مع مصانع أوروبية."/>
+<meta name="keywords" content="قصة نوڤا, Nova story, كفاح, شركة ليبية, صناعة ليبية, تاريخ نوڤا"/>
+<meta name="robots" content="index, follow"/>
 <meta property="og:title" content="قصتنا | نوڤا - رحلة كفاح"/>
 <meta property="og:description" content="من الفكرة إلى الريادة... قصة نجاح ليبية."/>
-<meta property="og:type" content="website"/>
+<meta property="og:type" content="article"/>
 <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'story-beginning.jpg' %}"/>
 <link rel="canonical" href="{{ request.build_absolute_uri }}"/>
-<meta name="robots" content="index, follow"/>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "قصتنا - نوڤا",
+  "url": "{{ request.build_absolute_uri }}",
+  "description": "قصة كفاح علامة نوڤا الليبية من الفكرة إلى الريادة",
+  "about": {
+    "@type": "Organization",
+    "name": "شركة نوڤا",
+    "foundingDate": "2023",
+    "foundingLocation": {"@type": "Place", "name": "بنغازي، ليبيا"}
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
