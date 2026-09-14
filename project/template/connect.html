@@ -377,17 +377,31 @@ h1, h2, h3, h4 { font-weight: 500; }
         </div>
       </div>
 
-      <div class="pt-space-lg border-t border-outline-variant/30 pb-space-lg mb-space-lg">
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-space-md bg-surface-container-low/50 rounded-2xl p-space-lg">
-          <span class="font-label-md text-label-md text-on-surface-variant">علامة تابعة لـ</span>
-            <img src="{% static 'bablogo.png' %}" alt="شركة باب دجلة" class="h-12 w-auto object-contain"/>
-            <div class="flex flex-col text-right">
-              <span class="font-headline-sm text-headline-sm text-primary font-bold">شركة باب دجلة</span>
-              <span class="font-label-sm text-label-sm text-on-surface-variant">الشركة الأم</span>
-            </div>
-        </div>
-      </div>
+        <div class="pt-space-lg border-t border-outline-variant/30 pb-space-lg mb-space-lg">
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-space-md 
+              bg-surface-container-low/50 rounded-2xl p-space-lg">
 
+    <span class="font-label-md text-label-md text-on-surface-variant">
+      علامة تابعة لـ
+    </span>
+
+    <img 
+      src="{% static 'bablogo.jpg' %}" 
+      alt="شركة باب دجلة"
+      class="h-20 sm:h-24 w-auto object-contain"
+    />
+
+    <div class="flex flex-col text-center sm:text-right">
+      <span class="font-headline-sm text-headline-sm text-primary font-bold">
+        شركة باب دجلة
+      </span>
+      <span class="font-label-sm text-label-sm text-on-surface-variant">
+        الشركة الأم
+      </span>
+    </div>
+
+  </div>
+</div>
       <div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-label-sm text-label-sm text-on-surface-variant border-t border-outline-variant/30">
         <div class="flex items-center gap-space-xs">
           <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
@@ -454,7 +468,6 @@ function sendToWhatsApp(event, type) {
   window.open(url, '_blank');
 }
 </script>
-
 <script id="tailwind-config">
   tailwind.config = {
     darkMode: "class",
@@ -515,6 +528,20 @@ function sendToWhatsApp(event, type) {
           "xl": "3rem",
           "full": "9999px"
         },
+        spacing: {
+          "space-2xl": "3rem",
+          "container-max": "1280px",
+          "space-xs": "0.5rem",
+          "space-4xl": "6rem",
+          "space-xl": "2rem",
+          "space-sm": "0.75rem",
+          "space-lg": "1.5rem",
+          "space-2xs": "0.25rem",
+          "space-md": "1rem",
+          "gutter-mobile": "1rem",
+          "gutter-desktop": "2rem",
+          "space-3xl": "4.5rem"
+        },
         fontFamily: {
           "label-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
           "body-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
@@ -522,12 +549,31 @@ function sendToWhatsApp(event, type) {
           "label-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
           "body-sm": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
           "headline-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
-          "body-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"]
+          "headline-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "body-md": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "display-xl": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "display-xl-mobile": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "label-lg": ["IBM Plex Sans", "IBM Plex Sans Arabic"],
+          "display-hero": ["IBM Plex Sans", "IBM Plex Sans Arabic"]
+        },
+        fontSize: {
+          "label-md": ["12px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+          "body-lg": ["18px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "300" }],
+          "headline-sm": ["22px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" }],
+          "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+          "display-xl": ["56px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "300" }],
+          "body-sm": ["13px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+          "display-xl-mobile": ["38px", { "lineHeight": "50px", "letterSpacing": "-0.01em", "fontWeight": "300" }],
+          "headline-lg": ["40px", { "lineHeight": "54px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+          "headline-md": ["28px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "500" }],
+          "body-md": ["15px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "headline-lg-mobile": ["28px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+          "display-hero": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "500" }]
         }
       }
     }
   }
 </script>
-
 </body>
 </html>
