@@ -723,22 +723,28 @@ h3, h4 {
         </div>
       </div>
 
-      <div class="pt-space-lg border-t border-outline-variant/30 pb-space-lg">
-  <div class="flex flex-col items-center justify-center gap-space-sm">
+      <div class="pt-space-lg border-t border-outline-variant/30 pb-space-lg mb-space-lg">
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-space-md 
+              bg-surface-container-low/50 rounded-2xl p-space-lg">
 
     <span class="font-label-md text-label-md text-on-surface-variant">
       علامة تابعة لـ
     </span>
 
     <img 
-      src="{% static 'bablogo.png' %}" 
+      src="{% static 'bablogo.jpg' %}" 
       alt="شركة باب دجلة"
-      class="h-24 sm:h-28 w-auto object-contain"
+      class="h-20 sm:h-24 w-auto object-contain"
     />
 
-    <span class="font-label-sm text-label-sm text-on-surface-variant">
-      الشركة الأم
-    </span>
+    <div class="flex flex-col text-center sm:text-right">
+      <span class="font-headline-sm text-headline-sm text-primary font-bold">
+        شركة باب دجلة
+      </span>
+      <span class="font-label-sm text-label-sm text-on-surface-variant">
+        الشركة الأم
+      </span>
+    </div>
 
   </div>
 </div>
